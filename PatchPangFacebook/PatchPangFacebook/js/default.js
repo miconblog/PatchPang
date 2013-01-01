@@ -19,10 +19,35 @@
                 // 여기서 응용 프로그램 상태를 복원하십시오.
             }
 
+            app.onsettings = function (e) {
+                e.detail.applicationcommands = {
+                    "about": {
+                        href: "/pages/about/about.html",
+                        title: "About"
+                    },
+                    "private": {
+                        href: "/pages/private/private.html",
+                        title: "Private Policy"
+                    }
+                }
+
+                WinJS.UI.SettingsFlyout.populateSettings(e);
+            };
+
             if (app.sessionState.history) {
                 nav.history = app.sessionState.history;
             }
             args.setPromise(WinJS.UI.processAll().then(function () {
+                // appbar 설정
+                document.getElementById("back").addEventListener("click", function () {
+                    nav.back();
+                });
+
+                document.getElementById("ranking").addEventListener("click", function () {
+                    nav.navigate("/pages/ranking/ranking.html");
+                });
+
+
                 if (nav.location) {
                     nav.history.current.initialPlaceholder = true;
                     return nav.navigate(nav.location, nav.state);

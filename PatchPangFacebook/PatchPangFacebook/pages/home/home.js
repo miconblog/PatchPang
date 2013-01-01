@@ -12,12 +12,13 @@
                 element.querySelector("#login").addEventListener("click", loginFacebook, false);
             }
 
-            //element.querySelector("#register").addEventListener("click", registerUser, false);
-            //element.querySelector("#ranking").addEventListener("click", showRanking, false);
             element.querySelector("#startGame").addEventListener("click", startGame, false);
+            this.appbar = document.getElementById("appbar").winControl;
+            this.appbar.hideCommands(["back"]);
+        },
 
-            init();
-            showRanking();
+        unload: function () {
+            this.appbar.showCommands(["back"]);
         }
     });
 
@@ -51,16 +52,13 @@
 
 
     function startGame() {
-        document.getElementById("game").style.display = "";
-        document.getElementById("home").style.display = "none";
-
-        game.reset();
+        WinJS.Navigation.navigate("/pages/game/game.html");
     }
 
     function getAccessToken() {
         return localSettings.values["accessToken"];
     }
-
+    
     function registerUser() {
         var token = getAccessToken();
 
@@ -123,9 +121,6 @@
     }
 
     function getFriends() {
-
-
-
         WinJS.xhr({
             url: "https://graph.facebook.com/me/friends?access_token=" + token
         }).done(function (result) {
@@ -134,47 +129,6 @@
             }
         });
     }
-
-
-    function setRankingData(rankingList) {
-        var list = new WinJS.Binding.List();
-
-        rankingList.forEach(function (item, index) {
-            item["rank"] = index + 1;
-            item["backgroundImage"] = "https://graph.facebook.com/" + item.id + "/picture";
-            list.push(item);
-        });
-
-        var listView = document.getElementById("rankingList").winControl;
-        listView.itemTemplate = document.getElementById("itemTemplate");
-        listView.itemDataSource = list.dataSource;
-        listView.layout = new WinJS.UI.ListLayout();
-    }
-
-    function showRanking() {
-
-        var data = {
-            id : localSettings.values["id"],
-            token : localSettings.values["accessToken"]
-        };
-
-        WinJS.xhr({
-            url: "http://miconblog.com/api/get/rank/" + data.id + "/" + data.token
-        }).done(function (result) {
-            if (result.status === 200) {
-                var response = JSON.parse(result.responseText);
-                console.log(result.responseText);
-                if (response.success == "OK") {
-                    setRankingData(response.ranking);
-                } else {
-
-                }
-            }
-        }, function (err) {
-
-        });
-    }
-
 
     function extendAccessToken(token) {
         var localSettings = Windows.Storage.ApplicationData.current.localSettings;
@@ -201,5 +155,4 @@
             console.log("ERROR : ", err.responseText);
         });
     }
-
 })();

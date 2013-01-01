@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>RVM_W8PRO_X64</Machine>
-    <WindowsUser>Byungseo</WindowsUser>
+    <Machine>MAC8</Machine>
+    <WindowsUser>sangmin</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>911A30E4597E13AD483DE56957A390B3728F2B01082A85BFE0A81E7F11DA569F</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>143488DABBF6437D44A5992C5F71A8F9477F0180783D59AEC9F1AE05244F87C1</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>50aece98-36ae-4963-96d4-ecd00323b8f3_1.0.0.0_neutral__ahk974hc2kjap</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>50aece98-36ae-4963-96d4-ecd00323b8f3_ahk974hc2kjap!App</RegisteredUserModeAppID>
     <RegisteredPackageID>50aece98-36ae-4963-96d4-ecd00323b8f3</RegisteredPackageID>
@@ -13,148 +13,208 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-12-28T05:39:47.975</Modified>
+      <Modified>2013-01-01T07:11:48.070</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\css\default.css">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2012-12-27T07:39:29.057</Modified>
+      <Modified>2013-01-01T05:12:40.965</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\pages\home\home.css">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\about\about.css">
+      <PackagePath>pages\about\about.css</PackagePath>
+      <Modified>2013-01-01T06:43:13.319</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\game\game.css">
+      <PackagePath>pages\game\game.css</PackagePath>
+      <Modified>2013-01-01T08:03:14.111</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\help\help.css">
+      <PackagePath>pages\help\help.css</PackagePath>
+      <Modified>2013-01-01T06:28:56.489</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\home\home.css">
       <PackagePath>pages\home\home.css</PackagePath>
-      <Modified>2012-12-28T06:17:38.094</Modified>
+      <Modified>2013-01-01T05:12:41.849</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\images\ani.png">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\private\private.css">
+      <PackagePath>pages\private\private.css</PackagePath>
+      <Modified>2013-01-01T07:22:15.903</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\ranking\ranking.css">
+      <PackagePath>pages\ranking\ranking.css</PackagePath>
+      <Modified>2013-01-01T07:20:27.863</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\images\ani.png">
       <PackagePath>images\ani.png</PackagePath>
-      <Modified>2012-12-28T05:38:52.000</Modified>
+      <Modified>2013-01-01T05:12:41.010</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\images\logo.png">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\images\logo.png">
       <PackagePath>images\logo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-07-26T02:30:08.000</Modified>
+      <Modified>2013-01-01T05:12:41.033</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\images\smalllogo.png">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\images\smalllogo.png">
       <PackagePath>images\smalllogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-07-26T02:30:08.000</Modified>
+      <Modified>2013-01-01T05:12:41.056</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\images\splashscreen.png">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\images\splashscreen.png">
       <PackagePath>images\splashscreen.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-07-26T02:30:08.000</Modified>
+      <Modified>2013-01-01T05:12:41.077</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\images\storelogo.png">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\images\storelogo.png">
       <PackagePath>images\storelogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2012-07-26T02:30:08.000</Modified>
+      <Modified>2013-01-01T05:12:41.101</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\controller\app.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\controller\app.js">
       <PackagePath>js\controller\app.js</PackagePath>
-      <Modified>2012-12-28T05:39:40.052</Modified>
+      <Modified>2013-01-01T08:26:26.127</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\controller\PatchPang.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\controller\PatchPang.js">
       <PackagePath>js\controller\PatchPang.js</PackagePath>
-      <Modified>2012-12-28T05:52:18.042</Modified>
+      <Modified>2013-01-01T08:21:12.673</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\default.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2012-12-27T07:39:29.042</Modified>
+      <Modified>2013-01-01T07:11:46.343</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\lib\backbone.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\lib\backbone.js">
       <PackagePath>js\lib\backbone.js</PackagePath>
-      <Modified>2012-12-28T05:16:39.000</Modified>
+      <Modified>2013-01-01T05:12:41.297</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\lib\collie.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\lib\collie.js">
       <PackagePath>js\lib\collie.js</PackagePath>
-      <Modified>2012-12-28T05:18:52.000</Modified>
+      <Modified>2013-01-01T05:24:19.228</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\lib\jquery.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\lib\jquery.js">
       <PackagePath>js\lib\jquery.js</PackagePath>
-      <Modified>2012-12-28T05:15:27.000</Modified>
+      <Modified>2013-01-01T05:12:41.540</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\lib\Observable.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\lib\Observable.js">
       <PackagePath>js\lib\Observable.js</PackagePath>
-      <Modified>2012-12-28T05:16:49.000</Modified>
+      <Modified>2013-01-01T05:12:41.555</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\lib\underscore.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\lib\underscore.js">
       <PackagePath>js\lib\underscore.js</PackagePath>
-      <Modified>2012-12-28T05:15:09.000</Modified>
+      <Modified>2013-01-01T05:12:41.593</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\main.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\main.js">
       <PackagePath>js\main.js</PackagePath>
-      <Modified>2012-12-28T05:15:51.000</Modified>
+      <Modified>2013-01-01T05:12:41.143</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\model\BlockItemPool.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\model\BlockItemPool.js">
       <PackagePath>js\model\BlockItemPool.js</PackagePath>
-      <Modified>2012-12-28T05:17:33.000</Modified>
+      <Modified>2013-01-01T05:12:41.631</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\model\GameScoreModel.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\model\GameScoreModel.js">
       <PackagePath>js\model\GameScoreModel.js</PackagePath>
-      <Modified>2012-12-28T05:17:15.000</Modified>
+      <Modified>2013-01-01T05:12:41.646</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\model\GameTimerModel.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\model\GameTimerModel.js">
       <PackagePath>js\model\GameTimerModel.js</PackagePath>
-      <Modified>2012-12-28T05:16:57.000</Modified>
+      <Modified>2013-01-01T08:00:35.732</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\model\LogicBoard.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\model\LogicBoard.js">
       <PackagePath>js\model\LogicBoard.js</PackagePath>
-      <Modified>2012-12-28T05:17:51.000</Modified>
+      <Modified>2013-01-01T05:12:41.685</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\model\RankModel.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\model\RankModel.js">
       <PackagePath>js\model\RankModel.js</PackagePath>
-      <Modified>2012-12-28T05:18:00.000</Modified>
+      <Modified>2013-01-01T05:12:41.698</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\model\SearchAlgorithm.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\model\SearchAlgorithm.js">
       <PackagePath>js\model\SearchAlgorithm.js</PackagePath>
-      <Modified>2012-12-28T05:17:42.000</Modified>
+      <Modified>2013-01-01T05:12:41.724</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\navigator.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
-      <Modified>2012-12-27T07:39:29.077</Modified>
+      <Modified>2013-01-01T05:12:41.163</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\view\GameScoreView.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\view\GameScoreView.js">
       <PackagePath>js\view\GameScoreView.js</PackagePath>
-      <Modified>2012-12-28T05:17:24.000</Modified>
+      <Modified>2013-01-01T05:12:41.768</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\view\GameTimerView.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\view\GameTimerView.js">
       <PackagePath>js\view\GameTimerView.js</PackagePath>
-      <Modified>2012-12-28T05:17:06.000</Modified>
+      <Modified>2013-01-01T05:12:41.785</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\view\LogicBoardView.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\view\LogicBoardView.js">
       <PackagePath>js\view\LogicBoardView.js</PackagePath>
-      <Modified>2012-12-28T05:18:19.000</Modified>
+      <Modified>2013-01-01T05:12:41.807</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\js\view\RankView.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\js\view\RankView.js">
       <PackagePath>js\view\RankView.js</PackagePath>
-      <Modified>2012-12-28T05:18:11.000</Modified>
+      <Modified>2013-01-01T05:12:41.826</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\pages\home\home.js">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\about\about.js">
+      <PackagePath>pages\about\about.js</PackagePath>
+      <Modified>2013-01-01T06:29:10.279</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\game\game.js">
+      <PackagePath>pages\game\game.js</PackagePath>
+      <Modified>2013-01-01T08:30:04.690</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\help\help.js">
+      <PackagePath>pages\help\help.js</PackagePath>
+      <Modified>2013-01-01T06:28:56.238</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\home\home.js">
       <PackagePath>pages\home\home.js</PackagePath>
-      <Modified>2012-12-28T05:55:55.386</Modified>
+      <Modified>2013-01-01T07:23:25.173</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\pages\home\home.html">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\private\private.js">
+      <PackagePath>pages\private\private.js</PackagePath>
+      <Modified>2013-01-01T06:29:27.248</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\ranking\ranking.js">
+      <PackagePath>pages\ranking\ranking.js</PackagePath>
+      <Modified>2013-01-01T08:28:17.048</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\about\about.html">
+      <PackagePath>pages\about\about.html</PackagePath>
+      <Modified>2013-01-01T06:43:46.636</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\game\game.html">
+      <PackagePath>pages\game\game.html</PackagePath>
+      <Modified>2013-01-01T07:55:04.330</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\help\help.html">
+      <PackagePath>pages\help\help.html</PackagePath>
+      <Modified>2013-01-01T06:28:56.346</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\home\home.html">
       <PackagePath>pages\home\home.html</PackagePath>
-      <Modified>2012-12-28T05:55:42.358</Modified>
+      <Modified>2013-01-01T06:53:03.438</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\default.html">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2012-12-27T07:39:29.046</Modified>
+      <Modified>2013-01-01T06:51:08.885</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Workspace\PatchPangFacebook\PatchPangFacebook\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\private\private.html">
+      <PackagePath>pages\private\private.html</PackagePath>
+      <Modified>2013-01-01T06:45:25.888</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\pages\ranking\ranking.html">
+      <PackagePath>pages\ranking\ranking.html</PackagePath>
+      <Modified>2013-01-01T08:28:18.950</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2012-12-28T05:39:47.913</Modified>
+      <Modified>2013-01-01T07:11:47.748</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\">
       <Name>Microsoft.WinJS.1.0</Name>
-      <Version>1.0.8514.0</Version>
+      <Version>1.0.9200.20512</Version>
       <Architecture>Neutral</Architecture>
-      <FrameworkIdentity>Name=Microsoft.WinJS.1.0, MinVersion=1.0.8514.0</FrameworkIdentity>
+      <FrameworkIdentity>Name=Microsoft.WinJS.1.0, MinVersion=1.0.9200.20512</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows\v8.0\ExtensionSDKs\Microsoft.WinJS.1.0\1.0\Microsoft.WinJS.1.0.appx</AppxLocation>
     </ResolvedSDKReference>
   </ItemGroup>
