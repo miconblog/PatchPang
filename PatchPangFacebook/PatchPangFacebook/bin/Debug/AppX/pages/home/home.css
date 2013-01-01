@@ -1,0 +1,36 @@
+﻿.homepage section[role=main] {
+
+    margin-left: 120px;
+    -ms-grid-columns: 1fr 520px;
+    -ms-grid-rows: 1fr;
+    display: -ms-grid;
+    height:100%;
+}
+
+    .homepage section[role=main] .content {
+        -ms-grid-column : 1;
+    }
+    
+    .homepage section[role=main] .game {
+        -ms-grid-column : 1;
+    }
+
+    .homepage section[role=main] .list {
+        -ms-grid-column : 2;
+        height: 100%;
+    }
+#rankingList {
+    height:100%;
+}
+
+@media screen and (-ms-view-state: snapped) {
+    .homepage section[role=main] {
+        margin-left: 20px;
+    }
+}
+
+@media screen and (-ms-view-state: portrait) {
+    .homepage section[role=main] {
+        margin-left: 100px;
+    }
+}

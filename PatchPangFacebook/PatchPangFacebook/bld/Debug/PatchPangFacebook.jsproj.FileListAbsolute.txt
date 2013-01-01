@@ -1,0 +1,13 @@
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bin\Debug\resources.pri
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bin\Debug\AppxManifest.xml
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bin\Debug\PatchPangFacebook.build.appxrecipe
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\priconfig.xml
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\layout.resfiles
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\resources.resfiles
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\pri.resfiles
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\LanguageQualifiers.txt
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\ProjectArchitectures.txt
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\priconfig.xml.intermediate
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\layout.resfiles.intermediate
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\resources.resfiles.intermediate
+C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\pri.resfiles.intermediate

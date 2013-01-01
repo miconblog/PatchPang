@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <title>homePage</title>
+
+    <!-- WinJS 참조 -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="/css/default.css" rel="stylesheet" />
+    <link href="/pages/home/home.css" rel="stylesheet" />
+    <script src="/pages/home/home.js"></script>
+    
+    <script src="/js/lib/jquery.js"></script>
+    <script src="/js/lib/underscore.js"></script>
+    <script src="/js/lib/backbone.js"></script>
+    <script src="/js/lib/Observable.js"></script>
+    <script src="/js/lib/collie.js"></script>
+    
+    <script src="/js/model/GameTimerModel.js"></script>
+    <script src="/js/view/GameTimerView.js"></script>
+    
+    <script src="/js/model/GameScoreModel.js"></script>
+    <script src="/js/view/GameScoreView.js"></script>
+    
+    <script src="/js/model/BlockItemPool.js"></script>
+    
+    <script src="/js/model/SearchAlgorithm.js"></script>
+    <script src="/js/model/LogicBoard.js"></script>
+    
+    <script src="/js/model/RankModel.js"></script>
+    <script src="/js/view/RankView.js"></script>
+    
+    <script src="/js/view/LogicBoardView.js"></script>
+    <script src="/js/controller/PatchPang.js"></script>
+    <script src="/js/controller/app.js"></script>
+
+</head>
+<body>
+    <div id="itemTemplate" class="itemTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="item">
+            <span class="item-rank" data-win-bind="textContent: rank"></span>
+            <img class="item-image" src="#" data-win-bind="src: backgroundImage; alt: name" />
+            <span class="item-title" data-win-bind="textContent: name"></span>
+            <span class="item-subtitle win-type-ellipsis" data-win-bind="textContent: hiscore"></span>
+        </div>
+    </div>
+
+    <!-- 로드되어 표시되는 콘텐츠입니다. -->
+    <div class="fragment homepage">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">PatchPangFacebook! 시작</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div class="contents" id="home">
+                <p>콘텐츠 위치</p>
+            
+                <button id="login">Facebook Login</button>
+                <!--button id="register">Register User</!--button-->
+                <button id="startGame">Start Game</button>
+                <!--button id="ranking">Ranking</button-->
+
+                <br />
+                <textarea cols="100" rows="10" id="result"></textarea>
+            </div>
+
+            <div id="game" class="game" style="display:none;">
+                <div id="container"></div>
+            </div>
+
+            <div class="list">
+                <div id="rankingList" class="rankingList win-selectionstylefilled" aria-label="List of note" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'multi' }"></div>
+            </div>
+        </section>
+        
+        
+    </div>
+
+</body>
+</html>
