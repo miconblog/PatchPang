@@ -3,8 +3,8 @@
  * @returns
  */
 var GameTimerModel = function () {
-
-	var remainTime = 60, // default 60 sec
+    var TIME_LIMIT = 5;
+    var remainTime = TIME_LIMIT, // default 60 sec
 	nTick = null, lastTime, currTime;
 
 	var self = this;
@@ -48,7 +48,7 @@ var GameTimerModel = function () {
 	};
 	
 	this.reset = function(){
-		remainTime = 60;
+	    remainTime = TIME_LIMIT;
 		self.notify("CHANGE_TIME", {
 			remainTime : remainTime
 		});

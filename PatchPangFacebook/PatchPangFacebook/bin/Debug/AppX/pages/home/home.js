@@ -12,12 +12,13 @@
                 element.querySelector("#login").addEventListener("click", loginFacebook, false);
             }
 
-            //element.querySelector("#register").addEventListener("click", registerUser, false);
-            //element.querySelector("#ranking").addEventListener("click", showRanking, false);
             element.querySelector("#startGame").addEventListener("click", startGame, false);
+            this.appbar = document.getElementById("appbar").winControl;
+            this.appbar.hideCommands(["back"]);
+        },
 
-            init();
-            showRanking();
+        unload: function () {
+            this.appbar.showCommands(["back"]);
         }
     });
 
@@ -43,24 +44,6 @@
                 document.getElementById("result").value = token;
 
                 extendAccessToken(token);
-
-                /*
-                token = "https://www.facebook.com/connect/login_success.html#access_token=AAADvpV9FHJgBADFGiVZB69BvOn9P7J7lScCj5RzeSD76nLwIj3a8qHmD8pZAcA9vX973fvTZBkztHGzAstdgAk4dOY1p9rrO9YNBZCayndrNwFc2PDwx&expires_in=4402";
-
-                var uri = new Windows.Foundation.Uri(token).queryParsed;
-                console.log(url.getFirstValueByName("access_token"));
-                */
-                /*
-                token = "https://www.facebook.com/connect/login_success.html?code=AQBY4COGxy4tJbXjCR_YvXQYhSARSgpbhtgowL_9RphqJ3wXb0I_gUSVGdcFCussy6KLJ4KeSLEcL6fC4FbYZt_0qsYe5UHekzx2o8hSZPPH551gThYX1iBWF2rMcYxiXhpIgDgywls9T0SbqhB2ChQ212nUE3HRli-z6ZqbvCqNQ0hvAmuFcHQoFSw3_QtWaOYTMpUrXG27yYLuOAjGB1SS#_=_";
-                document.getElementById("result").value = token;
-
-                var uri = new Windows.Foundation.Uri(token).queryParsed;
-                for (var p in uri) {
-                    console.log(p, uri[p]);
-                }
-                */
-
-                //getFriends(token);
             }, function (err) {
                 console.log(err);
             });
@@ -69,16 +52,13 @@
 
 
     function startGame() {
-        document.getElementById("game").style.display = "";
-        document.getElementById("home").style.display = "none";
-
-        game.reset();
+        WinJS.Navigation.navigate("/pages/game/game.html");
     }
 
     function getAccessToken() {
         return localSettings.values["accessToken"];
     }
-
+    
     function registerUser() {
         var token = getAccessToken();
 
@@ -141,9 +121,6 @@
     }
 
     function getFriends() {
-
-
-
         WinJS.xhr({
             url: "https://graph.facebook.com/me/friends?access_token=" + token
         }).done(function (result) {
@@ -152,113 +129,6 @@
             }
         });
     }
-
-
-    function setRankingData(rankingList) {
-        var list = new WinJS.Binding.List();
-
-        rankingList.forEach(function (item, index) {
-            item["rank"] = index + 1;
-            item["backgroundImage"] = "https://graph.facebook.com/" + item.id + "/picture";
-            list.push(item);
-        });
-
-        var listView = document.getElementById("rankingList").winControl;
-        listView.itemTemplate = document.getElementById("itemTemplate");
-        listView.itemDataSource = list.dataSource;
-        listView.layout = new WinJS.UI.ListLayout();
-    }
-
-    function showRanking() {
-
-        var data = {
-            id : localSettings.values["id"],
-            token : localSettings.values["accessToken"]
-        };
-
-        WinJS.xhr({
-            url: "http://miconblog.com/api/get/rank/" + data.id + "/" + data.token
-        }).done(function (result) {
-            if (result.status === 200) {
-                var response = JSON.parse(result.responseText);
-                console.log(result.responseText);
-                if (response.success == "OK") {
-                    setRankingData(response.ranking);
-                } else {
-
-                }
-            }
-        }, function (err) {
-
-        });
-
-
-        /*
-        var token = "https://www.facebook.com/connect/login_success.html#access_token=AAADvpV9FHJgBADFGiVZB69BvOn9P7J7lScCj5RzeSD76nLwIj3a8qHmD8pZAcA9vX973fvTZBkztHGzAstdgAk4dOY1p9rrO9YNBZCayndrNwFc2PDwx&expires_in=4402";
-        console.log(new RegExp(facebookCallbackURL + "#access_token=([^&]+)").exec(token)[1]);
-
-
-        WinJS.xhr({
-            url: "https://graph.facebook.com/oauth/access_token?grant_type=client_id=" + facebookAppID + "&redirect_uri=" + encodeURIComponent(facebookCallbackURL) + "&client_secret=" + facebookAppSecret + "&code=" + code
-        }).done(function (result) {
-            if (result.status === 200) {
-                debugger
-                console.log(1, result.responseText);
-            }
-        }, function (err) {
-            console.log("ERROR : ", err.responseText);
-        });
-        */
-        /*
-
-        var token = "https://www.facebook.com/connect/login_success.html?code=AQBY4COGxy4tJbXjCR_YvXQYhSARSgpbhtgowL_9RphqJ3wXb0I_gUSVGdcFCussy6KLJ4KeSLEcL6fC4FbYZt_0qsYe5UHekzx2o8hSZPPH551gThYX1iBWF2rMcYxiXhpIgDgywls9T0SbqhB2ChQ212nUE3HRli-z6ZqbvCqNQ0hvAmuFcHQoFSw3_QtWaOYTMpUrXG27yYLuOAjGB1SS#_=_";
-        document.getElementById("result").value = token;
-
-        var uri = new Windows.Foundation.Uri(token).queryParsed;
-        
-
-        var code = uri.getFirstValueByName("code") + "#_=_";
-        */
-
-        /*
-        var startURI = new Windows.Foundation.Uri("https://graph.facebook.com/oauth/access_token?client_id=" + facebookAppID + "&redirect_uri=" + encodeURIComponent(facebookCallbackURL) + "&client_secret=" + facebookAppSecret + "&code=" + code);
-        var endURI = new Windows.Foundation.Uri(facebookCallbackURL);
-
-        Windows.Security.Authentication.Web.WebAuthenticationBroker.authenticateAsync(
-            Windows.Security.Authentication.Web.WebAuthenticationOptions.none, startURI, endURI)
-            .done(function (result) {
-
-                console.log(result.responseData);
-
-                //getFriends(token);
-            }, function (err) {
-                console.log(err);
-            });
-*/
-        /*
-        WinJS.xhr({
-            url: "https://graph.facebook.com/oauth/access_token?client_id=" + facebookAppID + "&redirect_uri=" + encodeURIComponent(facebookCallbackURL) + "&client_secret=" + facebookAppSecret + "&code=" + code
-        }).done(function (result) {
-            if (result.status === 200) {
-                debugger
-                console.log(1, result.responseText);
-            }
-        }, function (err) {
-            console.log("ERROR : ", err.responseText);
-        });
-    */
-
-        /*
-        var result = "https://www.facebook.com/connect/login_success.html#access_token=AAADvpV9FHJgBAO91YwdwNkcOsKj9RZCx8ZALOVcHIXLR0oMRsEp758lp9vys1ye1ZBTuEWiXQg6bfT3uh93HqTbvzmsJHZCuBP41HJTqT16uGIRv2SiY&expires_in=5833";
-
-
-        var token = new RegExp(facebookCallbackURL + "#access_token=([^&]+)").exec(result)[1];
-
-
-        document.getElementById("result").value = token;
-        */
-    }
-
 
     function extendAccessToken(token) {
         var localSettings = Windows.Storage.ApplicationData.current.localSettings;
@@ -285,5 +155,4 @@
             console.log("ERROR : ", err.responseText);
         });
     }
-
 })();

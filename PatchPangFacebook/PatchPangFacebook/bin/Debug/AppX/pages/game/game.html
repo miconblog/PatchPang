@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>game</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="game.css" rel="stylesheet" />
+
+    <script src="/js/model/GameTimerModel.js"></script>
+    <script src="/js/view/GameTimerView.js"></script>
+    <script src="/js/model/GameScoreModel.js"></script>
+    <script src="/js/view/GameScoreView.js"></script>
+    <script src="/js/model/BlockItemPool.js"></script> 
+    <script src="/js/model/SearchAlgorithm.js"></script>
+    <script src="/js/model/LogicBoard.js"></script>  
+    <script src="/js/view/LogicBoardView.js"></script>
+    <script src="/js/controller/PatchPang.js"></script>
+    <script src="/js/controller/app.js"></script>
+
+    <script src="game.js"></script>
+</head>
+<body>
+    <div class="game fragment">
+        <div id="game" class="game">
+            <div id="container"></div>
+        </div>
+    </div>
+    <div id="timeover">TimeOver!</div>
+</body>
+</html>

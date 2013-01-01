@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ranking</title>
+
+    <!-- WinJS references -->
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
+    <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
+    <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
+
+    <link href="ranking.css" rel="stylesheet" />
+    <script src="ranking.js"></script>
+    <script src="/js/model/RankModel.js"></script>
+    <script src="/js/view/RankView.js"></script>
+</head>
+<body>
+    <div id="itemTemplate" class="itemTemplate" data-win-control="WinJS.Binding.Template">
+        <div class="item">
+            <span class="item-rank" data-win-bind="textContent: rank"></span>
+            <img class="item-image" src="#" data-win-bind="src: backgroundImage; alt: name" />
+            <span class="item-title" data-win-bind="textContent: name"></span>
+            <span class="item-subtitle win-type-ellipsis" data-win-bind="textContent: hiscore"></span>
+        </div>
+    </div>
+    <div class="ranking fragment">
+        <header aria-label="Header content" role="banner">
+            <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
+            <h1 class="titlearea win-type-ellipsis">
+                <span class="pagetitle">Ranking</span>
+            </h1>
+        </header>
+        <section aria-label="Main content" role="main">
+            <div class="list">
+                <div id="rankingList" class="rankingList win-selectionstylefilled" aria-label="List of note" data-win-control="WinJS.UI.ListView" data-win-options="{ selectionMode: 'none' }"></div>
+            </div>
+            <div id="afterGame">
+                <button id="button_replay">다시하기</button>
+                <button id="button_home">홈으로</button>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
