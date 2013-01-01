@@ -11,3 +11,16 @@ C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\priconfig.xml.interme
 C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\layout.resfiles.intermediate
 C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\resources.resfiles.intermediate
 C:\Workspace\PatchPangFacebook\PatchPangFacebook\bld\Debug\pri.resfiles.intermediate
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bin\Debug\resources.pri
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bin\Debug\AppxManifest.xml
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bin\Debug\PatchPangFacebook.build.appxrecipe
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bld\Debug\priconfig.xml
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bld\Debug\layout.resfiles
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bld\Debug\resources.resfiles
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bld\Debug\pri.resfiles
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bld\Debug\LanguageQualifiers.txt
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bld\Debug\ProjectArchitectures.txt
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bld\Debug\priconfig.xml.intermediate
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bld\Debug\layout.resfiles.intermediate
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bld\Debug\resources.resfiles.intermediate
+C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\bld\Debug\pri.resfiles.intermediate

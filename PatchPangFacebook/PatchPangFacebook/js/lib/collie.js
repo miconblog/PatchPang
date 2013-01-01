@@ -1,3 +1,4 @@
+
 /**
  * @namespace
  */
@@ -10,7 +11,7 @@ var collie = collie || {};
 	 * @name collie.version
 	 * @description 자동 치환되므로 직접 수정하지 않는다.
 	 */
-	collie.version = "1.0.1";
+	collie.version = "1.0.3";
 	
 	/**
 	 * 클래스 만들기
@@ -143,7 +144,7 @@ var collie = collie || {};
 		 * 값을 한번 얻어오면 다음부터는 캐시된 값을 사용 한다
 		 * 
 		 * @return {Object} htInfo
-		 * @return {Boolean} htInfo.isDesktop 데스크탑 여부
+		 * @return {Boolean} htInfo.desktop 데스크탑 여부
 		 * @return {Boolean} htInfo.supportCanvas 캔버스 지원 여부
 		 * @return {Boolean|Number} htInfo.android 안드로이드라면 두번째까지의 버젼, 안드로이드가 아니라면 false
 		 * @return {Boolean|Number} htInfo.ios iOS라면 두번째까지의 버젼, iOS가 아니라면 false
@@ -1376,7 +1377,7 @@ collie.ComponentEvent = collie.Class(/** @lends collie.ComponentEvent.prototype 
  * });
  * @namespace
  */
-collie.ImageManager = new (collie.Class(/** @lends collie.ImageManager */{
+collie.ImageManager = collie.ImageManager || new (collie.Class(/** @lends collie.ImageManager */{
 	/**
 	 * 이미지 로딩 실패시 재시도 횟수
 	 * @type {Number}
@@ -3462,6 +3463,7 @@ collie.DisplayObjectDOM = collie.Class(/** @lends collie.DisplayObjectDOM.protot
 		this._bUseTranslateZ = true;
 		this._bIsRetinaDisplay = null;
 		this._htEvent = {};
+		this._oEmptyObject = {};
 		this._sCacheTransformValue = null;
 		this._initElement();
 	},
@@ -3549,7 +3551,7 @@ collie.DisplayObjectDOM = collie.Class(/** @lends collie.DisplayObjectDOM.protot
 		this._htEvent.y = nY;
 		
 		var htInfo = this._htInfo;
-		var htDirty = this._oDisplayObject.getDirty();
+		var htDirty = this._oDisplayObject.getDirty() || this._oEmptyObject;
 		var htOrigin = this._oDisplayObject.getOrigin();
 		var nRatio = (this._bIsRetinaDisplay ? 2 : 1);
 		
@@ -4483,7 +4485,7 @@ collie.DisplayObject = collie.Class(/** @lends collie.DisplayObject.prototype */
 		
 		// Canvas에서 화면 밖으로 나가거나 DOM에서 바뀐게 있을 떄 그림
 		if (
-				(this._sRenderingMode == "dom" && this.getDirty()) || (
+				(this._sRenderingMode == "dom" && this.isChanged()) || (
 				this._sRenderingMode == "canvas" && (
 					nX + htInfo.width >= 0 ||
 					nX <= nLayerWidth ||
@@ -5281,17 +5283,19 @@ collie.Rectangle = collie.Class(/** @lends collie.Rectangle.prototype */{
 	}
 }, collie.DisplayObject);
 /**
- * 원 그리기 (Canvas 전용)
+ * Drawing Circle
+ * - It support only Canvas
  * @class
  * @extends collie.DisplayObject
- * @param {Object} [htOption] 설정
- * @param {Number} [htOption.radius=0] 반지름(px)
- * @param {String} [htOption.strokeColor] 테두리 색상
- * @param {Number} [htOption.strokeWidth=0] 테두리 굵기(0이면 테두리 없음)
- * @param {String} [htOption.fillColor] 채울 색상(없으면 투명)
- * @param {Number} [htOption.startAngle=0] 시작 각도(각도)
- * @param {Number} [htOption.endAngle=0] 끝 각도(각도), 시작 0이고 끝 360이면 전체를 채운다
- * @param {Boolean} [htOption.anticlockwise=false] 시계 반대반향으로 채울지 여부
+ * @param {Object} [htOption] Options
+ * @param {Number} [htOption.radius=0] Radius(px)
+ * @param {String} [htOption.strokeColor] Border color
+ * @param {Number} [htOption.strokeWidth=0] Border width. It'll be disappear when you set this option as 0.
+ * @param {String} [htOption.fillColor] Inside color. The Default value is transparent color.
+ * @param {Number} [htOption.startAngle=0] Starting Angle(degree)
+ * @param {Number} [htOption.endAngle=0] Ending Angle(degree), The Circle would be fully filled when you set starting angle as 0 and set ending angle as 360.
+ * @param {Boolean} [htOption.anticlockwise=false] The Circle will be filled anticlockwise when you set this option as true.
+ * @canvas
  */
 collie.Circle = collie.Class(/** @lends collie.Circle.prototype */{
 	/**
@@ -5369,7 +5373,7 @@ collie.Circle = collie.Class(/** @lends collie.Circle.prototype */{
 	},
 	
 	/**
-	 * 문자열로 클래스 정보 반환
+	 * Returns information of Class as String
 	 * 
 	 * @return {String}
 	 */
@@ -6087,7 +6091,7 @@ collie.Animation = collie.Class(/** @lends collie.Animation.prototype */{
 			
 			/**
 			 * 타이머를 일시 정지할 때 발생
-			 * @name collie.Animation#parse
+			 * @name collie.Animation#pause
 			 * @event
 			 * @param {Object} oEvent 기본 컴포넌트 이벤트 객체
 			 */
@@ -6779,11 +6783,15 @@ collie.AnimationCycle = collie.Class(/** @lends collie.AnimationCycle.prototype 
 		
 		// 실행되어야 할 시간이 지났다면 실행
 		if (this._nRunningTime === 0 || this._nRunLastestTime + this._nTerm <= this._nRunningTime) {
+			// 끝 값이면 시작 값으로 되돌림
+			if (this._nValue === htOption.to) {
+				this._nValue = htOption.from - htOption.step;
+			}
+			
 			this._nValue += (htOption.step * (1 + nSkippedCount));
 			this._nCount += (1 + nSkippedCount);
 			
 			// 값을 벗어났을 때 처리
-			//TODO 너무 쉬었을 때 느려질 것 같은데?
 			if (htOption.from <= htOption.to ? this._nValue >= htOption.to : this._nValue <= htOption.to) {
 				var nOverCount = (this._nValue - htOption.to) / htOption.step;
 				var nOverCountCycle = Math.ceil(nOverCount / (this._nTotalCount + 1)); // 전체 숫자 카운트
@@ -7474,7 +7482,7 @@ collie.TimerList = collie.Class(/** @lends collie.TimerList.prototype */{
  * 타이머를 생성 / 관리. 모든 타이머는 collie.Timer에서 생성한다
  * @namespace
  */
-collie.Timer = new (collie.Class(/** @lends collie.Timer */{
+collie.Timer = collie.Timer || new (collie.Class(/** @lends collie.Timer */{
 	$init : function () {
 		this._oList = new collie.TimerList();
 	},
@@ -7577,7 +7585,7 @@ collie.Timer = new (collie.Class(/** @lends collie.Timer */{
 자기가 기록한 frame이 현재 frame보다 클 때 보정 처리를 반드시 해줘야 한다.
 이는 나중에 frame이 int 풀카운트가 되었을 때 처리가 있을지도 모르므로 필수
  */
-collie.Renderer = new (collie.Class(/** @lends collie.Renderer */{
+collie.Renderer = collie.Renderer || new (collie.Class(/** @lends collie.Renderer */{
 	/**
 	 * 기본 렌더링 FPS
 	 * @type {String}
@@ -7618,6 +7626,7 @@ collie.Renderer = new (collie.Class(/** @lends collie.Renderer */{
 	$init : function () {
 		this._sRequestAnimationFrameName = this._getNameAnimationFrame();
 		this._sCancelAnimationFrameName = this._getNameAnimationFrame(true);
+		this._sVisibilityChange = this._getNamePageVisibility();
 		this._bPlaying = false;
 		this._bPause = false;
 		this._nFPS = 0;
@@ -7643,14 +7652,24 @@ collie.Renderer = new (collie.Class(/** @lends collie.Renderer */{
 		this._htEventStatus = {};
 		this._htPosition = {};
 		this._bIsPreventDefault = true;
-		this._fRefresh = this.refresh.bind(this);
+		this._htDeviceInfo = collie.util.getDeviceInfo();
 		
-		// 페이지 이탈할 때 처리, 퍼포먼스가 향상 된다.
-		collie.util.addEventListener(window, "pageshow", this._onPageShow.bind(this));
-		collie.util.addEventListener(window, "pagehide", this._onPageHide.bind(this));
+		// PageVisibility API를 사용할 수 있다면 사용
+		if (this._sVisibilityChange) {
+			collie.util.addEventListener(document, this._sVisibilityChange, this._onChangeVisibility.bind(this));
+		// 모바일이라면 pageshow/pagehide를 사용
+		// In-App Browser일 때 pageshow/pagehide가 정상적으로 호출 안되는 문제점이 있음
+		} else if (!this._htDeviceInfo.desktop) {
+			collie.util.addEventListener(window, "pageshow", this._onPageShow.bind(this));
+			collie.util.addEventListener(window, "pagehide", this._onPageHide.bind(this));
+		// 그것도 아니면 onfocus/onblur를 사용
+		} else {
+			collie.util.addEventListener(window, "focus", this._onPageShow.bind(this));
+			collie.util.addEventListener(window, "blur", this._onPageHide.bind(this));
+		}
 		
 		// 렌더러 엘리먼트의 위치를 저장해 놓는다
-		collie.util.addEventListener(window, "resize", this._fRefresh);
+		collie.util.addEventListener(window, "resize", this.refresh.bind(this));
 	},
 	
 	/**
@@ -7670,6 +7689,19 @@ collie.Renderer = new (collie.Class(/** @lends collie.Renderer */{
 	_onPageHide : function () {
 		if (this.isPlaying()) {
 			this.pause();
+		}
+	},
+	
+	/**
+	 * @private
+	 */
+	_onChangeVisibility : function () {
+		var state = document.visibilityState || document.webkitVisibilityState || document.mozVisibilityState;
+
+		if (state == "hidden") {
+			this.pause();
+		} else if (state == "visible") {
+			this.resume();
 		}
 	},
 	
@@ -7919,20 +7951,41 @@ collie.Renderer = new (collie.Class(/** @lends collie.Renderer */{
 	/**
 	 * requestAnimationFrame 사용 여부 반환
 	 * 
+	 * @private
 	 * @param {Boolean} bCancelName true면 CancelAnimationFrame 이름을 반환
 	 * @return {bool|String} 사용 가능하면 함수명을 반환
 	 */
 	_getNameAnimationFrame : function (bCancelName) {
-		var aNames = ['', 'webkit', 'moz', 'ms', 'o'];
-		var sName = bCancelName ? aNames[i] + (i === 0 ? 'c' : 'C') + 'ancelAnimationFrame' : aNames[i] + (i === 0 ? 'r' : 'R') + 'equestAnimationFrame';
-		
-		for (var i = 0, len = aNames.length; i < len; i++) {
-			if (typeof window[sName] != "undefined") {
-				return sName;
-			}
+		if (typeof window.requestAnimationFrame !== "undefined") {
+			return bCancelName ? "cancelAnimationFrame" : "requestAnimationFrame";
+		} else if (typeof window.webkitRequestAnimationFrame !== "undefined") {
+			return bCancelName ? "webkitCancelAnimationFrame" : "webkitRequestAnimationFrame";
+		} else if (typeof window.msRequestAnimationFrame !== "undefined") {
+			return bCancelName ? "msCancelAnimationFrame" : "msRequestAnimationFrame";
+		} else if (typeof window.mozRequestAnimationFrame !== "undefined") {
+			return bCancelName ? "mozCancelAnimationFrame" : "mozRequestAnimationFrame";
+		} else if (typeof window.oRequestAnimationFrame !== "undefined") {
+			return bCancelName ? "oCancelAnimationFrame" : "oRequestAnimationFrame";
+		} else {
+			return false;
 		}
-		
-		return false;
+	},
+	
+	/**
+	 * Page Visibility Event 이름을 반환
+	 * @private
+	 * @return {String|Boolean}
+	 */
+	_getNamePageVisibility : function () {
+		if ("hidden" in document) {
+			return "visibilitychange";
+		} else if ("webkitHidden" in document) {
+			return "webkitvisibilitychange";
+		} else if ("mozHidden" in document) {
+			return "mozvisibilitychange";
+		} else {
+			return false;
+		} 
 	},
 	
 	/**
@@ -7996,7 +8049,7 @@ collie.Renderer = new (collie.Class(/** @lends collie.Renderer */{
 		if (!this._bPlaying) {
 			// this.stop();
 			vDuration = vDuration || this.DEFAULT_FPS;
-			this._nDuration = (/fps$/i.test(vDuration)) ? 1000 / parseInt(vDuration, 10) : vDuration;
+			this._nDuration = (/fps$/i.test(vDuration)) ? 1000 / parseInt(vDuration, 10) : Math.max(16, vDuration);
 			this._fCallback = fCallback || null;
 			this._bPlaying = true;
 			
@@ -8013,11 +8066,13 @@ collie.Renderer = new (collie.Class(/** @lends collie.Renderer */{
 	},
 	
 	_trigger : function (nDelay) {
-		// 성능을 위해 필요없는 코드 제거
-		// trigger 걸기 전에 Timer가 살아 있으면 비워줌
-		// this._resetTimer();
+		if (!this._sVisibilityChange) {
+			if (window.screenTop < -30000) {
+				this.pause();
+			}
+		}
 		
-		if (typeof nDelay == "undefined") {
+		if (typeof nDelay === "undefined") {
 			nDelay = 0;
 		} else {
 			nDelay = parseInt(nDelay, 10);
@@ -8052,7 +8107,7 @@ collie.Renderer = new (collie.Class(/** @lends collie.Renderer */{
 		if (this._nBeforeFrameTime !== null) {
 			nRealDuration = nTime - this._nBeforeFrameTime; // 실제 걸린 시간
 			nFrameStep = nSkippedFrame || Math.max(1, Math.round(nRealDuration / this._nDuration)); // 60fps 미만으로는 버린다
-			
+
 			// requestAnimationFrame 인자가 들어옴
 			if (this._sRequestAnimationFrameName !== false) {
 				nSkippedFrame = 0;
@@ -8147,7 +8202,10 @@ collie.Renderer = new (collie.Class(/** @lends collie.Renderer */{
 			} else {
 				clearTimeout(this._oRenderingTimer);
 			}
-			
+
+			//TODO debug			
+			window.tempTimer = window.tempTimer || [];
+			window.tempTimer.push(this._oRenderingTimer);
 			this._oRenderingTimer = null;
 		}
 	},
