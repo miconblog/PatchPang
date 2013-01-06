@@ -33,7 +33,7 @@
 		// 가로 검색
 		for( y=0; y<N; ++y){
 			
-			if( !board[y*N+start] ){ continue; }	// 값이 0이면 통과!
+			if( board[y*N+start] < 1 ){ continue; }	// 값이 0보다 작으면 통과!
 			
 			idx.length = 0;
 			idx.push(y*N+start);
@@ -67,7 +67,7 @@
 		// 세로 검색
 		for( x=0; x<N; ++x){
 			
-			if( !board[x+start*N] ){ continue; }	// 값이 0이면 통과!
+			if( board[x+start*N] < 1 ){ continue; }	// 값이 0보다 작으면 통과!
 			
 			idx.length = 0;
 			idx.push(x+start*N);
@@ -109,7 +109,6 @@
 		for(i=0; i <= max; ++i){
 			result.push( search(board, i, length) );
 		}
-		
 		return _.compact(result)[0];
 		
 	};
@@ -156,7 +155,7 @@
 				_.each(basket, function(v){
 					board[v] = 0;
 				});
-				item.indexes = _.compact(basket);
+				item.indexes = _.uniq(basket);
 				item.dir = 3;
 			}
 		});
@@ -206,7 +205,7 @@
 				_.each(basket, function(v){
 					board[v] = 0;
 				});
-				item.indexes = _.compact(basket);
+				item.indexes = _.uniq(basket);
 				item.dir = 4;
 			}
 		});
@@ -250,11 +249,11 @@
 		 * @param idx
 		 */
 		targetSearch : function(board, idx){
-			var result = [];
+			var result = [], number = board[idx];
 			
 			var item = verticalSearch(board, {
 				indexes : [idx],
-				number : board[idx]
+				number : number
 			});
 			if( item.indexes.length > 2 ){
 				result.push(_.clone(item));
@@ -265,7 +264,7 @@
 			
 			item =horizontalSearch(board, {
 				indexes : [idx],
-				number : board[idx]
+				number : number
 			});
 			if( item.indexes.length > 2 ){
 				result.push(_.clone(item));
@@ -307,6 +306,69 @@
 					board[maxIdx] = -1 * ("" + o.number + o.indexes.length );
 				}
 			});
+		},
+		
+		/**
+		 * 힌트를 찾는다. 
+		 * @param board
+		 */
+		findHint : function(board){
+			
+			var cboard = board.concat();
+			
+			// 좌우 스위치
+			var x,y,tmp,result;
+			for(y=0; y<N; ++y){
+				for(x=0; x<N-1; ++x ){
+					tmp = cboard[y*N + x+1];
+					cboard[y*N + x+1] = cboard[y*N + x];
+					cboard[y*N + x] = tmp;
+					
+					result =  this.targetSearch(cboard, y*N + x);
+					
+					if(result){
+						//console.log("찾았다!", y*N + x, result);
+						return y*N + x;
+					}else{
+						result =  this.targetSearch(cboard, y*N + x+1);
+						if( result ){
+							//console.log("찾았다!", y*N + x+1, result);
+							return y*N + x+1;	
+						}else{
+							//console.log(y*N + x, "못찾았다!");
+							cboard = board.concat();
+						}
+					}
+				}
+			}
+			
+			
+			// 상하  스위치
+			for(y=0; y<N-1; ++y){
+				for(x=0; x<N; ++x ){
+					tmp = cboard[y*N + x+7];
+					cboard[y*N + x+7] = cboard[y*N + x];
+					cboard[y*N + x] = tmp;
+					
+					result =  this.targetSearch(cboard, y*N + x);
+					if(result){
+						//console.log("찾았다!", y*N + x, result);
+						return y*N + x;
+					}else{
+						result =  this.targetSearch(cboard, y*N + x+7);
+						if( result ){
+						//	console.log("찾았다!", y*N + x+7, result);
+							return y*N + x+7;	
+						}else{
+							//console.log(y*N + x, "못찾았다!");
+							cboard = board.concat();
+						}
+					}
+				}
+			}
+			
+			console.log("진짜 못찾았다!!! GameOver!!");
+			return null;
 		}
 	};
 })();

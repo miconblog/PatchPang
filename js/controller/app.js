@@ -8,52 +8,32 @@
 	});
 
 	// 레이어를 만든다
-	var layer = new collie.Layer({
+	var bgLayer = new collie.Layer({
 		width : SIZE * 7,
 		height : SIZE * 10
 	});
 	
-	var itemLayer = new collie.Layer({
+	var boardLayer = new collie.Layer({
 		width : SIZE * 7,
 		height : SIZE * 7
 	});
 	
+	if( collie.util.getDeviceInfo().ios ){
+		bgLayer.resize(320, 480, true);
+		boardLayer.resize(320, 320, true);	
+	}
+	
+	
 
 	// 레이어를 렌더러에 붙인다
-	collie.Renderer.addLayer(layer);
-	collie.Renderer.addLayer(itemLayer);
-
+	collie.Renderer.addLayer(boardLayer);
+	collie.Renderer.addLayer(bgLayer);
+	//collie.Renderer.resize(320, 600, true);
+	
 	// 렌더러를 container 아이디의 엘리먼트에 불러온다
 	collie.Renderer.load(document.getElementById("container"));
 
 	// 렌더링을 시작한다
 	collie.Renderer.start();
-
-	// 타이머 
-	var timer = new GameTimerModel();
-	timer.observe({
-		"END_TIME" : function(e){
-			//alert("TIME OVER!");
-			logicView.deactivateUserEvent();
-		}
-	});
-	var timerView = new GameTimerView(timer, layer);
-	
-	// 게임 점수
-	var score = new GameScoreModel();
-	var scoreView= new GameScoreView(score, layer);
-
-	
-	// 로직 보드
-	logic = new LogicBoard();
-	logic.observe({
-		"CHANGE_BOARD" : function(e){
-			score.calculatePoint( e.result );
-			
-		}
-	});
-	logicView = new LogicBoardView(logic, itemLayer);
-	logic.search()
-
-	timer.start();
+	game = new PatchPang(boardLayer, bgLayer);
 })();

@@ -24,11 +24,11 @@
 			    offsetY : 0,
 			    spriteX : 0,
 			    spriteY : 0,
-			    spriteLength : 14
+			    spriteLength : 14,
+			    isMoving : false
 			});
 			
 			item.used = false;
-			item.isMove = false;
 			this.pool.push(item);
 		}
 	};
@@ -41,6 +41,7 @@
 			if(!this.pool[i].used ){
 				this.pool[i].used = true;
 				this.pool[i].set(opt);
+				this.pool[i].set("isMoving", false);
 				return this.pool[i];
 			}
 		}

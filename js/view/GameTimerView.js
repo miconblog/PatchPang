@@ -11,15 +11,15 @@ var GameTimerView = function(model, collieLayer){
 	
 	this.initialize();
 	this.initModelEvent();
-	this.initViewItemEvent();
+	//this.initViewItemEvent();
 };
 
 GameTimerView.prototype.initialize = function(){
 	
 	// 화면에 표시할 객체를 만든다
 	this.dpTimer = new collie.MovableObject({
-		x : "left",
-		y : "bottom",
+		x : 300,
+		y : 430,
 		//velocityRotate : 180,
 		backgroundImage : "logo" // 배경 이미지는 아까 로딩한 logo.png, 크기는 자동 설정 된다
 	}).addTo(this.layer); // layer에 붙인다
@@ -45,8 +45,6 @@ GameTimerView.prototype.initModelEvent = function(){
 GameTimerView.prototype.initViewItemEvent = function(){
 	this.dpTimer.attach("mousedown", function(){
 		this.model.reset();
-		
-		this.notify("CLICK_TIMER");
 		
 	}.bind(this));
 };

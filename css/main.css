@@ -1,0 +1,52 @@
+body {
+	padding:0;
+	margin:0;
+	margin-top:20px;
+}
+
+#rank {
+	position: absolute;
+	right : 20px;
+	top : 20px;
+}
+#list {
+	position: relative;
+}
+#list li {
+	position: relative;
+	width: 200px;
+}
+
+#list li span{
+	position: absolute;
+	height: 20px;
+}
+
+#list li span.ip {
+	width: 120px;
+}
+
+#list li span.score {
+	width: 25px;
+	right : 10px;
+}
+
+body.connected #login {
+	display: none;
+}
+
+body.connected #logout {
+	display: block;
+}
+
+body.not_connected #login {
+	display: block;
+}
+
+body.not_connected #logout {
+	display: none;
+}
+
+.hide {
+	display:none;
+}
