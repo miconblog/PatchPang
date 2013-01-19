@@ -166,7 +166,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\home\home.js">
       <PackagePath>pages\home\home.js</PackagePath>
-      <Modified>2013-01-19T06:59:31.636</Modified>
+      <Modified>2013-01-19T07:47:36.497</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\private\private.js">
       <PackagePath>pages\private\private.js</PackagePath>
@@ -190,7 +190,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\home\home.html">
       <PackagePath>pages\home\home.html</PackagePath>
-      <Modified>2013-01-19T06:56:54.509</Modified>
+      <Modified>2013-01-19T07:47:42.311</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\default.html">
       <PackagePath>default.html</PackagePath>

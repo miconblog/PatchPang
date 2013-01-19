@@ -18,6 +18,9 @@
             element.querySelector("#camera").addEventListener("click", takePicture, false);
             element.querySelector("#filePicker").addEventListener("click", pickFile, false);
 
+            element.querySelector("#initCapture").addEventListener("click", initCapture, false);
+            element.querySelector("#capture").addEventListener("click", capture, false);
+
             this.appbar = document.getElementById("appbar").winControl;
             this.appbar.hideCommands(["back"]);
         },
@@ -181,6 +184,8 @@
     function previewImage(file) {
         var img = document.createElement("img");
         img.src = URL.createObjectURL(file, { oneTimeOnly: true });
+        img.width = "120";
+        img.height = "120";
         document.getElementById("home").appendChild(img);
     }
 
@@ -204,6 +209,40 @@
 
         openPicker.pickSingleFileAsync().then(function (file) {
             previewImage(file);
+        });
+    }
+
+
+
+    var oMediaCapture;
+
+    function initCaptureSettings() {
+        var oCaptureInitSettings = null;
+        oCaptureInitSettings = new Windows.Media.Capture.MediaCaptureInitializationSettings();
+        oCaptureInitSettings.audioDeviceId = "";
+        oCaptureInitSettings.videoDeviceId = "";
+        oCaptureInitSettings.streamingCaptureMode = Windows.Media.Capture.StreamingCaptureMode.video;
+        oCaptureInitSettings.photoCaptureSource = Windows.Media.Capture.PhotoCaptureSource.videoPreview;
+
+        return oCaptureInitSettings;
+    }
+
+    function initCapture(event) {
+        oMediaCapture = new Windows.Media.Capture.MediaCapture();
+
+        oMediaCapture.initializeAsync(initCaptureSettings()).done(function (result) {
+            var video = document.getElementById("previewVideo");
+            video.src = URL.createObjectURL(oMediaCapture, { oneTimeOnly: true });
+            video.play();
+        });
+    }
+
+    function capture(e) {
+        Windows.Storage.KnownFolders.picturesLibrary.createFileAsync("photo.png", Windows.Storage.CreationCollisionOption.generateUniqueName).then(function (newFile) {
+            var photoProperties = Windows.Media.MediaProperties.ImageEncodingProperties.createPng();
+            oMediaCapture.capturePhotoToStorageFileAsync(photoProperties, newFile).done(function (result) {
+                previewImage(newFile);
+            });
         });
     }
 })();
