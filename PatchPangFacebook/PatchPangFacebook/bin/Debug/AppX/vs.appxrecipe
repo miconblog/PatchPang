@@ -5,7 +5,7 @@
     <WindowsUser>Byungseo</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>911A30E4597E13AD483DE56957A390B3728F2B01082A85BFE0A81E7F11DA569F</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>7EE7258FCDE976E99E4BD303F278EE9671E1B0D2CBF16AA7AFA2333272E7A3C0</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>50aece98-36ae-4963-96d4-ecd00323b8f3_1.0.0.0_neutral__ahk974hc2kjap</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>50aece98-36ae-4963-96d4-ecd00323b8f3_ahk974hc2kjap!App</RegisteredUserModeAppID>
     <RegisteredPackageID>50aece98-36ae-4963-96d4-ecd00323b8f3</RegisteredPackageID>
@@ -16,7 +16,7 @@
     <AppXManifest Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-01-01T09:01:04.084</Modified>
+      <Modified>2013-01-19T06:47:32.412</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -166,7 +166,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\home\home.js">
       <PackagePath>pages\home\home.js</PackagePath>
-      <Modified>2013-01-01T09:04:00.163</Modified>
+      <Modified>2013-01-19T06:59:31.636</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\private\private.js">
       <PackagePath>pages\private\private.js</PackagePath>
@@ -190,7 +190,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\home\home.html">
       <PackagePath>pages\home\home.html</PackagePath>
-      <Modified>2013-01-01T08:58:04.682</Modified>
+      <Modified>2013-01-19T06:56:54.509</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\default.html">
       <PackagePath>default.html</PackagePath>
@@ -206,7 +206,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-01-01T09:01:03.881</Modified>
+      <Modified>2013-01-19T06:47:32.256</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -14,6 +14,10 @@
             }
 
             element.querySelector("#startGame").addEventListener("click", startGame, false);
+
+            element.querySelector("#camera").addEventListener("click", takePicture, false);
+            element.querySelector("#filePicker").addEventListener("click", pickFile, false);
+
             this.appbar = document.getElementById("appbar").winControl;
             this.appbar.hideCommands(["back"]);
         },
@@ -169,6 +173,37 @@
             }
         }, function (err) {
             console.log("ERROR : ", err.responseText);
+        });
+    }
+
+
+
+    function previewImage(file) {
+        var img = document.createElement("img");
+        img.src = URL.createObjectURL(file, { oneTimeOnly: true });
+        document.getElementById("home").appendChild(img);
+    }
+
+    function takePicture(e) {
+        var captureUI = new Windows.Media.Capture.CameraCaptureUI();
+        captureUI.photoSettings.allowCropping = true;
+        captureUI.photoSettings.croppedSizeInPixels = { width: 480, height: 480 };
+
+        captureUI.captureFileAsync(Windows.Media.Capture.CameraCaptureUIMode.photo).then(function (file) {
+            if (file) {
+                previewImage(file);
+            }
+        });
+    }
+
+    function pickFile(e) {
+        var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+        openPicker.suggestedStartLocation = Windows.Storage.KnownFolders.picturesLibrary;
+        openPicker.viewMode = Windows.Storage.Pickers.PickerViewMode.thumbnail;
+        openPicker.fileTypeFilter.replaceAll([".png", ".jpg", ".jpeg"]);
+
+        openPicker.pickSingleFileAsync().then(function (file) {
+            previewImage(file);
         });
     }
 })();
