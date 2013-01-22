@@ -5,41 +5,36 @@
  * @returns
  */
 var GameScoreView = function(model, collieLayer){
-	
 	this.model = model;
 	this.layer = collieLayer;
-	
 	this.initialize();
 	this.initModelEvent();
-	//this.initViewItemEvent();
 };
 
-GameScoreView.prototype.initialize = function(){
-	// 화면에 표시할 객체를 만든다
-	this.dpScore = new collie.Text({
-		x : 50,
-		y : "bottom",
-		width : 250, // 너비와 높이를 반드시 지정해야 합니다.
-	    height : 100,
-	    fontSize : 35,
-	    fontColor : "#234"
-	}).addTo(this.layer); // layer에 붙인다
-	//this.dpScore.text("패치팡 시작!");
+GameScoreView.prototype.initialize = function () {
+    this.scoreText = new collie.DisplayObject({
+        x: 0,
+        y: 54,
+        backgroundImage: "score"
+    }).addTo(this.layer);
+
+    this.dpScore = new collie.ImageNumber({
+        x: 60,
+        y: 50,
+        width: 300,
+        height: 30
+    }).number({
+        width: 25,
+        height: 30,
+        backgroundImage: "combo_number_small"
+    }).addTo(this.layer);
 };
 
 GameScoreView.prototype.initModelEvent = function(){
 	this.model.observe({
 		"CHANGE_SCORE" : function(e){
-			this.dpScore.text(e.score);
+			this.dpScore.setValue(e.score);
 			this.dpScore.detachAll("click");
-		}.bind(this)
-	});
-};
-
-GameScoreView.prototype.initViewItemEvent = function(){
-	this.dpScore.attach({
-		"click" : function(e){
-			this.model.notify("GAME_START");
 		}.bind(this)
 	});
 };

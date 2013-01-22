@@ -16,18 +16,18 @@
 </head>
 <body>
     <div id="itemTemplate" class="itemTemplate" data-win-control="WinJS.Binding.Template">
-        <div class="item">
-            <span class="item-rank" data-win-bind="textContent: rank"></span>
+        <div class="item win-ui-light">
             <img class="item-image" src="#" data-win-bind="src: backgroundImage; alt: name" />
-            <span class="item-title" data-win-bind="textContent: name"></span>
-            <span class="item-subtitle win-type-ellipsis" data-win-bind="textContent: hiscore"></span>
+            <div class="item-rank" data-win-bind="textContent: rank"></div>
+            <div class="item-title" data-win-bind="textContent: name"></div>
+            <div class="item-subtitle win-type-ellipsis" data-win-bind="textContent: hiscore"></div>
         </div>
     </div>
     <div class="ranking fragment">
         <header aria-label="Header content" role="banner">
             <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
             <h1 class="titlearea win-type-ellipsis">
-                <span class="pagetitle">Ranking</span>
+                <span class="pagetitle">순위보기</span>
             </h1>
         </header>
         <section aria-label="Main content" role="main">

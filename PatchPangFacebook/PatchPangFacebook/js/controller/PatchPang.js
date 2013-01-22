@@ -1,6 +1,16 @@
 var PatchPang = function (boardLayer, bgLayer) {
     var localSettings = Windows.Storage.ApplicationData.current.localSettings;
 
+    this.gameover = new collie.DisplayObject({
+        x: "center",
+        y: 0,
+        width: 300,
+        height: 337,
+        backgroundImage: "game_over",
+        visible: false,
+        zIndex: 5
+    }).addTo(boardLayer);
+
 	// 타이머 
 	this.timer = new GameTimerModel();
 	this.timer.observe({
@@ -12,14 +22,17 @@ var PatchPang = function (boardLayer, bgLayer) {
 			var localSettings = Windows.Storage.ApplicationData.current.localSettings;
 			var startTime = (+new Date());
 
-	        // timeover 보여주는거
-			document.getElementById("timeover").style.display = "block";
-
 			console.log(JSON.stringify({
 			    score: this.score.getScore(),
 			    id: localSettings.values["id"],
 			    token: localSettings.values["accessToken"]
 			}));
+
+			Sound.stopBG();
+			Sound.stop();
+			logic.stop();
+			this.gameover.set("visible", true);
+			Sound.start("end");
 
             // 점수 등록
 			WinJS.xhr({
@@ -61,7 +74,6 @@ var PatchPang = function (boardLayer, bgLayer) {
 		}.bind(this)
 	});
 	new GameScoreView(this.score, bgLayer);
-
 	
 	// 로직 보드
 	logic = new LogicBoard();
@@ -81,6 +93,7 @@ PatchPang.prototype.reset = function(){
 	
 	logicView.activateUserEvent();
 	collie.Renderer.refresh();
+	this.gameover.set("visible", false);
 	this.score.reset();
 	this.timer.reset();
 	this.timer.start();

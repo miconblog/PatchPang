@@ -10,3 +10,15 @@
 .SettingsContent {
      margin-top: 24px;
 }
+
+    .SettingsContent h2 {
+        margin-top:30px;
+    }
+
+        .SettingsContent h2.first {
+            margin-top:0;
+        }
+
+    .SettingsContent h4 {
+        margin-top:10px;
+    }

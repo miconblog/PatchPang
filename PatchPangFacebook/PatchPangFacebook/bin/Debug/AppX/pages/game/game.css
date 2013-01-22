@@ -1,15 +1,26 @@
 ﻿.game section[role=main] {
-    margin-left: 120px;
-    margin-right: 120px;
+    /*margin-left: 120px;
+    margin-right: 120px;*/
+}
+
+.bg {
+    position: absolute;
+    height: 470px;
+    width: 100%;
+    left: 0;
+    top: 200px;
+    background-color:#333;
 }
 
 #container {
+    padding:0;
+    margin:0;
     position:absolute;
-    width: 320px;
-    height: 480px;
+    width: 420px;
+    height: 600px;
     left: 50%;
-    margin-left:-160px;
-    margin-top:50px;
+    top: 50px;
+    margin-left: -210px;
 }
 
 #timeover {
@@ -29,14 +40,14 @@
 
 @media screen and (-ms-view-state: snapped) {
     .game section[role=main] {
-        margin-left: 20px;
-        margin-right: 20px;
+        /*margin-left: 20px;
+        margin-right: 20px;*/
     }
 }
 
 @media screen and (-ms-view-state: fullscreen-portrait) {
     .game section[role=main] {
-        margin-left: 100px;
-        margin-right: 100px;
+        /*margin-left: 100px;
+        margin-right: 100px;*/
     }
 }

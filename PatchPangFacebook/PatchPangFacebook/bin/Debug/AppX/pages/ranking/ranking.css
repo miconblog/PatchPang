@@ -4,7 +4,51 @@
 }
 
 .list {
+    width: 600px;
     height: 500px;
+}
+
+.item {
+    position: relative;
+    background-color: #ffa624;
+}
+
+    .item .item-rank {
+        position: absolute;
+        font: bold 2em Helvetica;
+        left: 0px;
+        bottom: 0px;
+        color: #fff;
+        text-shadow:1px 1px 5px #000;
+    }
+    .item .item-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
+    }
+    .item .item-title {
+        position: absolute;
+        left: 80px;
+        top: 18px;
+        font-weight:bold;
+        font-size:1.5em;
+        color: #fff;
+        text-shadow:1px 1px 3px #333;
+    }
+    .item .item-subtitle {
+        position: absolute;
+        right: 30px;
+        top: 18px;
+        font-weight:bold;
+        font-size:1.5em;
+        color: #000;
+        text-shadow:1px 1px 3px #fff;
+    }
+
+#afterGame button {
+    background-color:#333;
+    font-size: 1.3em;
+    padding:7px 10px;
 }
 
 @media screen and (-ms-view-state: snapped) {

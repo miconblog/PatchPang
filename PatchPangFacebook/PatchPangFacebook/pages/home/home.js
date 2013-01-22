@@ -9,6 +9,9 @@
             if (localSettings.values["accessToken"]) {
                 validateToken();
                 element.querySelector("#login").style.display = "none";
+                element.querySelector("#logout").style.display = "block";
+                element.querySelector("#logout").addEventListener("click", logoutFacebook, false);
+                showName();
             } else {
                 element.querySelector("#login").addEventListener("click", loginFacebook, false);
             }
@@ -22,6 +25,14 @@
             this.appbar.showCommands(["back"]);
         }
     });
+
+    function showName() {
+        if (localSettings.values["id"]) {
+            document.getElementById("result").innerHTML =
+                "<img src='https://graph.facebook.com/" + localSettings.values["id"] + "/picture' class='picture' /><br />" + 
+                localSettings.values["name"] + "님 환영합니다!";
+        }
+    }
 
     var localSettings = Windows.Storage.ApplicationData.current.localSettings;
     var facebookAppID = "263493547007128";
@@ -39,12 +50,14 @@
         Windows.Security.Authentication.Web.WebAuthenticationBroker.authenticateAsync(
             Windows.Security.Authentication.Web.WebAuthenticationOptions.none, startURI, endURI)
             .done(function (result) {
+                var reg = new RegExp(facebookCallbackURL + "#access_token=([^&]+)");
 
-
-                var token = new RegExp(facebookCallbackURL + "#access_token=([^&]+)").exec(result.responseData)[1];
-                document.getElementById("result").value = token;
-
-                extendAccessToken(token);
+                // 취소할 경우 에러나서 수정
+                if (reg.test(result.responseData)) {
+                    var token = new RegExp(facebookCallbackURL + "#access_token=([^&]+)").exec(result.responseData)[1];
+                    document.getElementById("result").innerHTML = "";
+                    extendAccessToken(token);
+                }
             }, function (err) {
                 console.log(err);
             });
@@ -66,6 +79,9 @@
         });
     }
 
+    //TODO 로그아웃
+    function logoutFacebook() {
+    }
 
     function startGame() {
         WinJS.Navigation.navigate("/pages/game/game.html");
@@ -78,8 +94,7 @@
     function registerUser() {
         var token = getAccessToken();
 
-        document.getElementById("result").value = token;
-
+        //document.getElementById("result").value = token;
 
 
         WinJS.xhr({
@@ -103,9 +118,10 @@
         });
 
         console.log(data);
-
         localSettings.values["id"] = id;
         localSettings.values["name"] = name;
+
+        showName();
 
         WinJS.xhr({
             type: "post",

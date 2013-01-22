@@ -11,7 +11,7 @@ var collie = collie || {};
 	 * @name collie.version
 	 * @description 자동 치환되므로 직접 수정하지 않는다.
 	 */
-	collie.version = "1.0.3";
+	collie.version = "1.0.5";
 	
 	/**
 	 * 클래스 만들기
@@ -2051,8 +2051,8 @@ collie.LayerCanvas = collie.Class(/** @lends collie.LayerCanvas.prototype */{
 		this._elCanvas.height = htSize.height;
 		this._elCanvas.className = "_collie_layer";
 		this._elCanvas.style.position = "absolute";
-		this._elCanvas.style.top = 0;
-		this._elCanvas.style.left = 0;
+		this._elCanvas.style.left = this._oLayer.option("x") + "px";
+		this._elCanvas.style.top = this._oLayer.option("y") + "px";
 		
 		if (collie.Renderer.isRetinaDisplay()) {
 			this._elCanvas.style.width = (htSize.width / 2) + "px";
@@ -2166,8 +2166,8 @@ collie.LayerDOM = collie.Class(/** @lends collie.LayerDOM.prototype */{
 		this._el = document.createElement("div");
 		this._el.className = "_collie_layer";
 		this._el.style.position = "absolute";
-		this._el.style.top = 0;
-		this._el.style.left = 0;
+		this._el.style.left = this._htOption.x + "px";
+		this._el.style.top = this._htOption.y + "px";
 		this._el.style.width = this._htOption.width + "px";
 		this._el.style.height = this._htOption.height + "px";
 	},
@@ -2347,8 +2347,8 @@ collie.LayerEvent = collie.Class(/** @lends collie.LayerEvent.prototype */{
 		
 		// 이벤트가 일어난 곳의 상대 좌표를 계산
 		var htPosition = collie.Renderer.getPosition();
-		var nRelatedX = nPageX - htPosition.x; 
-		var nRelatedY = nPageY - htPosition.y;
+		var nRelatedX = nPageX - htPosition.x - this._oLayer.option("x");
+		var nRelatedY = nPageY - htPosition.y - this._oLayer.option("y");
 		
 		if (sType == "touchcancel") {
 			if (this._htEventStartPos !== null) {
@@ -2644,11 +2644,11 @@ collie.LayerEvent = collie.Class(/** @lends collie.LayerEvent.prototype */{
 	_isPointInDisplayObjectBoundary : function (oDisplayObject, nPointX, nPointY) {
 		// 안보이는 상태거나 이벤트를 받지 않는다면 지나감
 		if (
-			!oDisplayObject.get("useEvent") ||
-			!oDisplayObject.get("visible") ||
-			!oDisplayObject.get("width") ||
-			!oDisplayObject.get("height") ||
-			(oDisplayObject.get("useEvent") == "auto" && !oDisplayObject.hasAttachedHandler())
+			!oDisplayObject._htOption.useEvent ||
+			!oDisplayObject._htOption.visible ||
+			!oDisplayObject._htOption.width ||
+			!oDisplayObject._htOption.height ||
+			(oDisplayObject._htOption.useEvent == "auto" && !oDisplayObject.hasAttachedHandler())
 			) {
 			return false;
 		}
@@ -2767,6 +2767,8 @@ collie.LayerEvent = collie.Class(/** @lends collie.LayerEvent.prototype */{
  * @param {Object} [htOption]
  * @param {Number} [htOption.width=320] 너비 (px)
  * @param {Number} [htOption.height=480] 높이 (px)
+ * @param {Number} [htOption.x=0] x좌표 (px)
+ * @param {Number} [htOption.y=0] y좌표 (px)
  * @param {Boolean} [htOption.useEvent=true] 이벤트를 사용한다. 속도를 위해 현재 레이어에서 이벤트를 사용하지 않을 수 있다
  * @param {Boolean} [htOption.visible=true] 화면 표시 여부
  * @param {Boolean} [htOption.freeze=false] true로 설정하면 해당 레이어를 업데이트를 하지 않는다
@@ -2783,6 +2785,8 @@ collie.Layer = collie.Class(/** @lends collie.Layer.prototype */{
 	 */
 	$init : function (htOption) {
 		this.option({
+			x : 0,
+			y : 0,
 			width : 320, // 너비
 			height : 480, // 높이
 			useEvent : true,
@@ -2790,12 +2794,27 @@ collie.Layer = collie.Class(/** @lends collie.Layer.prototype */{
 			freeze : false
 		});
 		
+		// 정렬을 해야한다면 일단 0으로 만들어 놓고 load될 때 정렬함
+		this._sAlignLeft = null;
+		this._sAlignTop = null;
+		
+		if (htOption.x == "left" || htOption.x == "right" || htOption.x == "center") {
+			this._sAlignLeft = htOption.x;
+			htOption.x = 0;
+		}
+		 
+		if (htOption.y == "top" || htOption.y == "bottom" || htOption.y == "center") {
+			this._sAlignTop = htOption.y;
+			htOption.y = 0;
+		} 
+		
 		if (htOption !== undefined) {
 			this.option(htOption);
 		}
 		
 		this.drawCount = 0; // debugging 용 draw count
 		this.optionSetter("visible", this._setVisible.bind(this)); // 처음 set은 Drawing이 생성된 후에 실행 된다
+		this._elParent = null;
 		this._bChanged = false;
 		this._aDisplayObjects = [];
 		this._bLoaded = false;
@@ -2839,10 +2858,21 @@ collie.Layer = collie.Class(/** @lends collie.Layer.prototype */{
 	load : function (elParent, nZIndex) {
 		this.unload();
 		this._bLoaded = true;
-		this.getElement().style.zIndex = nZIndex;
 		this._elParent = elParent;
 		this._elParent.style.width = Math.max(parseInt(this._elParent.style.width || 0, 10), this.option("width")) + "px";
 		this._elParent.style.height = Math.max(parseInt(this._elParent.style.height || 0, 10), this.option("height")) + "px";
+		this.getElement().style.zIndex = nZIndex;
+		
+		// 생성자 옵션에 정렬이 포함돼 있으면 load, unload를 반복하더라도 정렬을 계속한다.
+		// 하지만 사용자가 직접 offset을 사용하는 경우에는 reset되도록 세 번째 인자를 통해 조치한다.
+		if (this._sAlignLeft !== null) {
+			this.offset(this._sAlignLeft, null, true);
+		}
+		
+		if (this._sAlignTop !== null) {
+			this.offset(null, this._sAlignTop, true);
+		}
+		
 		this._elParent.appendChild(this.getElement());
 	},
 	
@@ -2953,6 +2983,24 @@ collie.Layer = collie.Class(/** @lends collie.Layer.prototype */{
 				this.removeChild(aList[i], i);
 			}
 		}
+	},
+	
+	/**
+	 * 렌더러에 레이어를 추가한다 (DisplayObject와 유사)
+	 * @TODO 추후 collie.Renderer가 다중 인스턴스가 될 경우 파라미터를 넣읋 수 있음
+	 * @example before
+	 * var layer = new collie.Layer();
+	 * collie.Renderer.addLayer(layer);
+	 * @example after
+	 * var layer = new collie.Layer().addTo();
+	 * 
+	 * @param {collie.Renderer} [oRenderer] 추가될 렌더러를 지정, 없으면 collie.Renderer를 기본으로 한다
+	 * @return {collie.Layer} 자기 자신을 반환
+	 */
+	addTo : function (oRenderer) {
+		oRenderer = oRenderer || collie.Renderer;
+		oRenderer.addLayer(this);
+		return this;
 	},
 	
 	/**
@@ -3071,10 +3119,8 @@ collie.Layer = collie.Class(/** @lends collie.Layer.prototype */{
 	 */ 
 	resize : function (nWidth, nHeight, bExpand) {
 		if (!bExpand) {
-			this.option({
-				width : nWidth || this.option("width"),
-				height : nHeight || this.option("height")
-			});
+			this.option("width", nWidth || this.option("width"));
+			this.option("height", nHeight || this.option("height"));
 		}
 		
 		if (this._oDrawing) {
@@ -3084,6 +3130,64 @@ collie.Layer = collie.Class(/** @lends collie.Layer.prototype */{
 		if (this._elParent) {
 			this._elParent.style.width = Math.max(parseInt(this._elParent.style.width || 0, 10), nWidth || this.option("width")) + "px";
 			this._elParent.style.height = Math.max(parseInt(this._elParent.style.height || 0, 10), nHeight || this.option("height")) + "px";
+		}
+	},
+	
+	/**
+	 * 레이어의 위치를 변경 한다
+	 * 레이어의 부모의 크기는 등록된 레이어 중 가장 큰 레이어의 크기에 맞게 변경된다.
+	 * 
+	 * @param {Number|String} [nX] x좌표(px), left, right, center를 입력하면 Renderer의 크기 기준으로 정렬된다. 렌더러의 크기가 변하더라도 자동으로 움직이지 않는다.
+	 * @param {Number|String} [nY] y좌표(px), top, bottom, center를 입력하면 Renderer의 크기 기준으로 정렬된다. 렌더러의 크기가 변하더라도 자동으로 움직이지 않는다.
+	 * @param {Boolean} [bSkipResetInitAlign] private용 변수, 직접 쓰지 않는다.
+	 */
+	offset : function (nX, nY, bSkipResetInitAlign) {
+		var el = this.getElement();
+		
+		if (typeof nX !== "undefined" && nX !== null) {
+			switch (nX) {
+				case "left" :
+					nX = 0;
+					break;
+					
+				case "right" :
+					nX = parseInt(this._elParent.style.width, 10) - this._htOption.width;
+					break;
+					
+				case "center" :
+					nX = parseInt(this._elParent.style.width, 10) / 2 - this._htOption.width / 2;
+					break;
+			}
+			
+			this.option("x", nX);
+			el.style.left = nX + "px";
+			
+			if (!bSkipResetInitAlign) {
+				this._sAlignLeft = null;
+			}
+		}
+		
+		if (typeof nY !== "undefined" && nY !== null) {
+			switch (nY) {
+				case "top" :
+					nY = 0;
+					break;
+					
+				case "bottom" :
+					nY = parseInt(this._elParent.style.height, 10) - this._htOption.height;
+					break;
+					
+				case "center" :
+					nY = parseInt(this._elParent.style.height, 10) / 2 - this._htOption.height / 2;
+					break;
+			}
+			
+			this.option("y", nY);
+			el.style.top = nY + "px";
+			
+			if (!bSkipResetInitAlign) {
+				this._sAlignTop = null;
+			}
 		}
 	}
 }, collie.Component);
@@ -3267,6 +3371,7 @@ collie.DisplayObjectCanvas = collie.Class(/** @lends collie.DisplayObjectCanvas.
 				oTransformContext = !bUseParentContext ? this._oContext : oParentContext;
 			}
 			
+			oTransformContext.save();
 			oTransformContext.translate(nX + nOriginX, nY + nOriginY);
 		
 			if (htInfo.opacity != 1) {
@@ -3415,21 +3520,7 @@ collie.DisplayObjectCanvas = collie.Class(/** @lends collie.DisplayObjectCanvas.
 
 		// 원위치
 		if (bUseTransform) {
-			oTransformContext.translate(nOriginX, nOriginY);
-			
-			if (htInfo.opacity !== 1) {
-				oTransformContext.globalAlpha = nSavedOpacity;
-			}
-		
-			if (htInfo.angle !== 0) {
-				oTransformContext.rotate(-collie.util.toRad(htInfo.angle));
-			}
-			
-			if (htInfo.scaleX !== 1 || htInfo.scaleY !== 1) {
-				oTransformContext.scale(1 / htInfo.scaleX, 1 / htInfo.scaleY);
-			}
-			
-			oTransformContext.translate(-(nSavedXRatio + nOriginX), -(nSavedYRatio + nOriginY));
+			oTransformContext.restore();
 		}
 	}
 });
@@ -3772,6 +3863,7 @@ collie.DisplayObjectDOM.CLASSNAME = "_collie_displayObject";
 collie.DisplayObjectDOM.ID = "_collie_displayObject_";
 /**
  * 화면 표시 객체
+ * - spriteX, spriteY값을 변경하면 offset 값이 바뀌지만, offsetX, offsetY값을 변경해도 sprite 값은 바뀌지 않는다.
  * @class collie.DisplayObject
  * @extends collie.Component
  * @param {Object} [htOption] 설정 옵션
@@ -3966,7 +4058,7 @@ collie.DisplayObject = collie.Class(/** @lends collie.DisplayObject.prototype */
 		}
 		
 		// 스프라이트 속성 적용
-		if (vKey == 'spriteX' || vKey == 'spriteY' || vKey == 'offsetX' || vKey == 'offsetY') {
+		if (vKey == 'spriteX' || vKey == 'spriteY') {
 			this._setSpritePosition(vKey, vValue);
 		}
 		
@@ -4841,7 +4933,7 @@ collie.DisplayObject = collie.Class(/** @lends collie.DisplayObject.prototype */
 	 * @param {Number} nValue 값
 	 */
 	_setSpritePosition : function (sKey, nValue) {
-		if (this._elImage) {
+		if (this._elImage && nValue !== null) {
 			var htImageSize = this.getImageSize();
 			var htInfo = this.get();
 			var nWidth = htInfo.width;
@@ -4879,16 +4971,6 @@ collie.DisplayObject = collie.Class(/** @lends collie.DisplayObject.prototype */
 				case "spriteY" :
 					nValue = Math.min(nValue, nMaxSpriteY);
 					this.set("offsetY", nValue * nHeight, true);
-					break;
-					
-				case "offsetX" :
-					nValue = Math.min(nValue, nMaxOffsetX);
-					this.set("spriteX", Math.round(nValue / htImageSize.width), true);
-					break;
-					
-				case "offsetY" : 
-					nValue = Math.min(nValue, nMaxOffsetY);
-					this.set("spriteY", Math.round(nValue / htImageSize.height), true);
 					break;
 			}
 		}
@@ -7624,8 +7706,6 @@ collie.Renderer = collie.Renderer || new (collie.Class(/** @lends collie.Rendere
 	DEBUG_RENDERING_MODE : "auto",
 	
 	$init : function () {
-		this._sRequestAnimationFrameName = this._getNameAnimationFrame();
-		this._sCancelAnimationFrameName = this._getNameAnimationFrame(true);
 		this._sVisibilityChange = this._getNamePageVisibility();
 		this._bPlaying = false;
 		this._bPause = false;
@@ -8053,6 +8133,15 @@ collie.Renderer = collie.Renderer || new (collie.Class(/** @lends collie.Rendere
 			this._fCallback = fCallback || null;
 			this._bPlaying = true;
 			
+			// FPS가 60일 때만 requestAnimationFrame을 사용한다
+			if (this._nDuration < 17) {
+				this._sRequestAnimationFrameName = this._getNameAnimationFrame();
+				this._sCancelAnimationFrameName = this._getNameAnimationFrame(true);
+			} else {
+				this._sRequestAnimationFrameName = false;
+				this._sCancelAnimationFrameName = false;
+			}
+			
 			/**
 			 * 렌더링 시작
 			 * @name collie.Renderer#start
@@ -8107,7 +8196,7 @@ collie.Renderer = collie.Renderer || new (collie.Class(/** @lends collie.Rendere
 		if (this._nBeforeFrameTime !== null) {
 			nRealDuration = nTime - this._nBeforeFrameTime; // 실제 걸린 시간
 			nFrameStep = nSkippedFrame || Math.max(1, Math.round(nRealDuration / this._nDuration)); // 60fps 미만으로는 버린다
-
+			
 			// requestAnimationFrame 인자가 들어옴
 			if (this._sRequestAnimationFrameName !== false) {
 				nSkippedFrame = 0;
@@ -8213,20 +8302,22 @@ collie.Renderer = collie.Renderer || new (collie.Class(/** @lends collie.Rendere
 	/**
 	 * 잠시 멈춘다
 	 */
-	pause : function () {
-		this._bPlaying = false;
-		this._bPause = true;
-		
-		/**
-		 * 렌더러가 일시 정지 때 발생. getInfo 값이 이벤트 인자로 넘어간다
-		 * @name collie.Renderer#pause
-		 * @event
-		 * @see collie.Renderer.getInfo
-		 */
-		this.fireEvent("pause", this.getInfo());
-		
-		// 진행되고 있는 타이머를 해제
-		this._resetTimer();
+	pause: function () {
+	    if (this._bPlaying) {
+	        this._bPlaying = false;
+	        this._bPause = true;
+
+	        /**
+             * 렌더러가 일시 정지 때 발생. getInfo 값이 이벤트 인자로 넘어간다
+             * @name collie.Renderer#pause
+             * @event
+             * @see collie.Renderer.getInfo
+             */
+	        this.fireEvent("pause", this.getInfo());
+
+	        // 진행되고 있는 타이머를 해제
+	        this._resetTimer();
+	    }
 	},
 	
 	/**
@@ -8342,4 +8433,4 @@ collie.Renderer = collie.Renderer || new (collie.Class(/** @lends collie.Rendere
 			this._aLayerList[i].resize(nWidth, nHeight, bExpand);
 		}
 	}
-}, collie.Component))();
+}, collie.Component))();
