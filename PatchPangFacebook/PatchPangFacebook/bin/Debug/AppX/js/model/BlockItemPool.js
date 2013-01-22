@@ -26,7 +26,7 @@
 			    spriteY : 0,
 			    spriteLength : 14
 			});
-			
+
 			item.used = false;
 			this.pool.push(item);
 		}

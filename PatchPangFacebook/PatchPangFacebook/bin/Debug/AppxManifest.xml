@@ -22,14 +22,15 @@
   </Resources>
   <Applications>
     <Application Id="App" StartPage="default.html">
-      <VisualElements DisplayName="PatchPangFacebook" Logo="images\logo.png" SmallLogo="images\smalllogo.png" Description="PatchPangFacebook" ForegroundText="light" BackgroundColor="#464646">
-        <DefaultTile ShowName="allLogos" />
-        <SplashScreen Image="images\splashscreen.png" />
+      <VisualElements DisplayName="PatchPang" Logo="images\tile.png" SmallLogo="images\smalltile.png" Description="PatchPang" ForegroundText="light" BackgroundColor="#464646">
+        <DefaultTile ShowName="allLogos" WideLogo="images\largetile.png" ShortName="PatchPang" />
+        <SplashScreen Image="images\splash.png" BackgroundColor="#ffa624" />
       </VisualElements>
     </Application>
   </Applications>
   <Capabilities>
     <Capability Name="internetClient" />
+    <DeviceCapability Name="webcam" />
   </Capabilities>
   <Dependencies>
     <PackageDependency Name="Microsoft.WinJS.1.0" MinVersion="1.0.8514.0" />

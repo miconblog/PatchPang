@@ -47,6 +47,9 @@
                     nav.navigate("/pages/ranking/ranking.html");
                 });
 
+                // logo
+                Sound.start("intro");
+
 
                 if (nav.location) {
                     nav.history.current.initialPlaceholder = true;

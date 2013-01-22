@@ -38,6 +38,6 @@ GameScoreModel.prototype.calculatePoint = function(result){
 
 
 GameScoreModel.prototype.end = function(){
-	
+
 	this.notify("GAME_END");
 };

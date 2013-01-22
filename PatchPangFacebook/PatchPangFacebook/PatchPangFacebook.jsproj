@@ -55,16 +55,36 @@
     </AppxManifest>
     <Content Include="css\default.css" />
     <Content Include="images\ani.png" />
+    <Content Include="images\button_login.png" />
+    <Content Include="images\button_logout.png" />
+    <Content Include="images\button_start.png" />
+    <Content Include="images\character.png" />
+    <Content Include="images\combo.png" />
+    <Content Include="images\combo_number.png" />
+    <Content Include="images\combo_number_small.png" />
+    <Content Include="images\effect.png" />
+    <Content Include="images\game_over.png" />
+    <Content Include="images\largetile.png" />
     <Content Include="images\logo.png" />
-    <Content Include="images\smalllogo.png" />
-    <Content Include="images\splashscreen.png" />
+    <Content Include="images\score.png" />
+    <Content Include="images\splash.png" />
+    <Content Include="images\smalltile.png" />
     <Content Include="images\storelogo.png" />
+    <Content Include="images\tile.png" />
+    <Content Include="images\timer.png" />
+    <Content Include="images\timer_bar.png" />
+    <Content Include="images\timer_bar_back.png" />
+    <Content Include="images\timer_clock.png" />
+    <Content Include="images\top_rank.png" />
     <Content Include="js\controller\app.js" />
     <Content Include="js\controller\PatchPang.js" />
     <Content Include="js\default.js" />
     <Content Include="js\lib\backbone.js" />
+    <Content Include="js\lib\collie.addon.js" />
     <Content Include="js\lib\collie.js" />
     <Content Include="js\lib\jquery.js" />
+    <Content Include="js\lib\jukebox\Manager.js" />
+    <Content Include="js\lib\jukebox\Player.js" />
     <Content Include="js\lib\Observable.js" />
     <Content Include="js\lib\underscore.js" />
     <Content Include="js\main.js" />
@@ -75,6 +95,7 @@
     <Content Include="js\model\RankModel.js" />
     <Content Include="js\model\SearchAlgorithm.js" />
     <Content Include="js\navigator.js" />
+    <Content Include="js\sound.js" />
     <Content Include="js\view\GameScoreView.js" />
     <Content Include="js\view\GameTimerView.js" />
     <Content Include="js\view\LogicBoardView.js" />
@@ -98,6 +119,9 @@
     <Content Include="pages\ranking\ranking.css" />
     <Content Include="pages\ranking\ranking.html" />
     <Content Include="pages\ranking\ranking.js" />
+    <Content Include="sound\bg_fast.mp3" />
+    <Content Include="sound\bg_slow.mp3" />
+    <Content Include="sound\patchpang.mp3" />
     <None Include="PatchPangFacebook_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

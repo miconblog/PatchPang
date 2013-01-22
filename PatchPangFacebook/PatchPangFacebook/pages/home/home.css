@@ -1,5 +1,26 @@
-﻿.homepage section[role=main] {
+﻿button {
+    border: 0;
+}
 
+#result {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    width: 300px;
+    height: 80px;
+    margin-left: -150px;
+    text-align:center;
+}
+
+    #result p {
+        margin-top:40px;
+    }
+
+#logout {
+    margin-left:80px;
+}
+
+.homepage section[role=main] {
     margin-left: 120px;
     -ms-grid-columns: 1fr 520px;
     -ms-grid-rows: 1fr;
@@ -19,8 +40,32 @@
         -ms-grid-column : 2;
         height: 100%;
     }
+
 #rankingList {
     height:100%;
+}
+
+.logo {
+    width: 573px;
+    height: 449px;
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    margin-left: -286.5px;
+}
+
+#home {
+    position: absolute;
+    width: 300px;
+    height: 130px;
+    bottom: 100px;
+    left: 50%;
+    margin-left: -150px;
+    text-align: center;
+}
+
+#startGame {
+    margin-top:15px;
 }
 
 @media screen and (-ms-view-state: snapped) {

@@ -5,47 +5,78 @@
  * @returns
  */
 var GameTimerView = function(model, collieLayer){
-	
 	this.model = model;
 	this.layer = collieLayer;
-	
 	this.initialize();
 	this.initModelEvent();
-	//this.initViewItemEvent();
+	this._check30 = false;
+	this._check15 = false;
 };
 
-GameTimerView.prototype.initialize = function(){
-	
-	// 화면에 표시할 객체를 만든다
-	this.dpTimer = new collie.MovableObject({
-		x : 300,
-		y : 430,
-		//velocityRotate : 180,
-		backgroundImage : "logo" // 배경 이미지는 아까 로딩한 logo.png, 크기는 자동 설정 된다
-	}).addTo(this.layer); // layer에 붙인다
+GameTimerView.prototype.initialize = function () {
+    this.timerBackground = new collie.DisplayObject({
+        x: 10,
+        y: 100,
+        backgroundImage: "timer_back"
+    }).addTo(this.layer);
+
+    this.timer = new collie.DisplayObject({
+        backgroundImage: "timer",
+        originX: "left"
+    }).addTo(this.timerBackground);
+
+    this.clock = new collie.DisplayObject({
+        x: 0,
+        y: 0,
+        backgroundImage: "clock"
+    }).addTo(this.timerBackground);
+
+    this.clockTimer = collie.Timer.queue({
+        useAutoStart: false,
+        loop: 0
+    }).transition(this.clock, 80, {
+        to: -15,
+        set: "angle"
+    }).transition(this.clock, 80, {
+	    to: 15,
+	    set: "angle"
+	});
+};
+
+GameTimerView.prototype.reset = function () {
+    this._check30 = false;
+    this._check15 = false;
+    //this.timer.set("scaleX", 1);
+    this.clockTimer.stop();
+    this.clockTimer.reset();
 };
 
 GameTimerView.prototype.initModelEvent = function(){
 	this.model.observe({
-		"CHANGE_TIME" : function(oData){
+	    "CHANGE_TIME": function (oData) {
+	        this.timer.set("scaleX", oData.percent);
 
-			this.dpTimer.set('angle', -1*360*oData.remainTime / 60);
-			
-		}.bind(this),
-		
-		"END_TIME" : function(oData) {
-			
-			console.log(this, "END_TIME", oData.remainTime);
-			
-		}.bind(this)
+	        if (!this._check30 && oData.remainTime <= 30) {
+	            // 30초
+	            this._check30 = true;
+	            Sound.start("left30");
+	        }
+
+	        if (!this._check15 && oData.remainTime <= 15) {
+	            // 15초
+	            this._check15 = true;
+	            Sound.start("hurryup");
+	            Sound.startFastBG();
+	            this.clockTimer.start();
+	        }
+	    }.bind(this),
+
+	    "END_TIME": function () {
+	        this.reset();
+	    }.bind(this),
+
+	    "RESET_TIME": function () {
+	        this.reset();
+	    }.bind(this)
 	});
 };
-
-
-GameTimerView.prototype.initViewItemEvent = function(){
-	this.dpTimer.attach("mousedown", function(){
-		this.model.reset();
-		
-	}.bind(this));
-};
-

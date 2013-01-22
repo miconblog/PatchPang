@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>RVM_W8PRO_X64</Machine>
-    <WindowsUser>Byungseo</WindowsUser>
+    <Machine>MINIDEV</Machine>
+    <WindowsUser>mini</WindowsUser>
     <SolutionConfiguration>Debug|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>911A30E4597E13AD483DE56957A390B3728F2B01082A85BFE0A81E7F11DA569F</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>BFFD316F428F91BFF6B554FC5B689681AEF4DFC253385E826A2F1B797D37068D</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>50aece98-36ae-4963-96d4-ecd00323b8f3_1.0.0.0_neutral__ahk974hc2kjap</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>50aece98-36ae-4963-96d4-ecd00323b8f3_ahk974hc2kjap!App</RegisteredUserModeAppID>
     <RegisteredPackageID>50aece98-36ae-4963-96d4-ecd00323b8f3</RegisteredPackageID>
@@ -13,200 +13,297 @@
     <RegisteredVersion>1.0.0.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\bin\Debug\AppxManifest.xml">
+    <AppXManifest Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-01-01T09:01:04.084</Modified>
+      <Modified>2013-01-22T14:28:37.218</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\css\default.css">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\css\default.css">
       <PackagePath>css\default.css</PackagePath>
-      <Modified>2013-01-01T08:58:04.544</Modified>
+      <Modified>2013-01-22T13:35:42.930</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\about\about.css">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\about\about.css">
       <PackagePath>pages\about\about.css</PackagePath>
-      <Modified>2013-01-01T08:58:04.672</Modified>
+      <Modified>2013-01-22T14:05:46.863</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\game\game.css">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\game\game.css">
       <PackagePath>pages\game\game.css</PackagePath>
-      <Modified>2013-01-01T08:58:04.677</Modified>
+      <Modified>2013-01-22T10:42:16.045</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\help\help.css">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\help\help.css">
       <PackagePath>pages\help\help.css</PackagePath>
-      <Modified>2013-01-01T08:58:04.679</Modified>
+      <Modified>2013-01-22T07:52:26.823</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\home\home.css">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\home\home.css">
       <PackagePath>pages\home\home.css</PackagePath>
-      <Modified>2013-01-01T08:58:04.682</Modified>
+      <Modified>2013-01-22T13:44:15.748</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\private\private.css">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\private\private.css">
       <PackagePath>pages\private\private.css</PackagePath>
-      <Modified>2013-01-01T08:58:04.683</Modified>
+      <Modified>2013-01-22T07:52:26.824</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\ranking\ranking.css">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\ranking\ranking.css">
       <PackagePath>pages\ranking\ranking.css</PackagePath>
-      <Modified>2013-01-01T08:58:04.687</Modified>
+      <Modified>2013-01-22T14:01:18.178</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\images\ani.png">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\ani.png">
       <PackagePath>images\ani.png</PackagePath>
-      <Modified>2013-01-01T08:58:04.553</Modified>
+      <Modified>2013-01-22T07:52:26.747</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\images\logo.png">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\button_login.png">
+      <PackagePath>images\button_login.png</PackagePath>
+      <Modified>2013-01-22T09:33:14.514</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\button_logout.png">
+      <PackagePath>images\button_logout.png</PackagePath>
+      <Modified>2013-01-22T09:36:48.417</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\button_start.png">
+      <PackagePath>images\button_start.png</PackagePath>
+      <Modified>2013-01-22T09:35:39.587</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\character.png">
+      <PackagePath>images\character.png</PackagePath>
+      <Modified>2013-01-22T05:26:39.304</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\combo.png">
+      <PackagePath>images\combo.png</PackagePath>
+      <Modified>2013-01-22T05:07:46.779</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\combo_number.png">
+      <PackagePath>images\combo_number.png</PackagePath>
+      <Modified>2013-01-22T07:54:59.444</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\combo_number_small.png">
+      <PackagePath>images\combo_number_small.png</PackagePath>
+      <Modified>2013-01-22T11:14:49.851</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\effect.png">
+      <PackagePath>images\effect.png</PackagePath>
+      <Modified>2013-01-22T05:24:57.466</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\game_over.png">
+      <PackagePath>images\game_over.png</PackagePath>
+      <Modified>2013-01-22T11:42:59.740</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\largetile.png">
+      <PackagePath>images\largetile.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-01-18T23:32:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\logo.png">
       <PackagePath>images\logo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-01-01T08:58:04.554</Modified>
+      <Modified>2013-01-22T02:42:32.973</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\images\smalllogo.png">
-      <PackagePath>images\smalllogo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-01-01T08:58:04.555</Modified>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\score.png">
+      <PackagePath>images\score.png</PackagePath>
+      <Modified>2013-01-22T11:23:07.257</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\images\splashscreen.png">
-      <PackagePath>images\splashscreen.png</PackagePath>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\splash.png">
+      <PackagePath>images\splash.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-01-01T08:58:04.556</Modified>
+      <Modified>2013-01-22T02:39:35.558</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\images\storelogo.png">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\smalltile.png">
+      <PackagePath>images\smalltile.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-01-22T07:56:39.526</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\storelogo.png">
       <PackagePath>images\storelogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-01-01T08:58:04.557</Modified>
+      <Modified>2013-01-22T07:58:54.131</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\controller\app.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\tile.png">
+      <PackagePath>images\tile.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2013-01-18T23:46:58.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\timer.png">
+      <PackagePath>images\timer.png</PackagePath>
+      <Modified>2013-01-22T10:06:46.439</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\timer_bar.png">
+      <PackagePath>images\timer_bar.png</PackagePath>
+      <Modified>2013-01-22T11:20:49.794</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\timer_bar_back.png">
+      <PackagePath>images\timer_bar_back.png</PackagePath>
+      <Modified>2013-01-22T11:20:57.278</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\timer_clock.png">
+      <PackagePath>images\timer_clock.png</PackagePath>
+      <Modified>2013-01-22T10:19:23.247</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\images\top_rank.png">
+      <PackagePath>images\top_rank.png</PackagePath>
+      <Modified>2013-01-22T11:48:25.808</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\controller\app.js">
       <PackagePath>js\controller\app.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.564</Modified>
+      <Modified>2013-01-22T12:13:05.131</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\controller\PatchPang.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\controller\PatchPang.js">
       <PackagePath>js\controller\PatchPang.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.563</Modified>
+      <Modified>2013-01-22T12:51:23.260</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\default.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\default.js">
       <PackagePath>js\default.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.565</Modified>
+      <Modified>2013-01-22T12:10:53.622</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\backbone.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\backbone.js">
       <PackagePath>js\lib\backbone.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.575</Modified>
+      <Modified>2013-01-22T07:52:26.758</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\collie.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\collie.addon.js">
+      <PackagePath>js\lib\collie.addon.js</PackagePath>
+      <Modified>2013-01-22T08:12:08.516</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\collie.js">
       <PackagePath>js\lib\collie.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.596</Modified>
+      <Modified>2013-01-22T14:28:36.368</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\jquery.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\jquery.js">
       <PackagePath>js\lib\jquery.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.630</Modified>
+      <Modified>2013-01-22T07:52:26.799</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\Observable.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\jukebox\Manager.js">
+      <PackagePath>js\lib\jukebox\Manager.js</PackagePath>
+      <Modified>2012-10-08T04:05:15.741</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\jukebox\Player.js">
+      <PackagePath>js\lib\jukebox\Player.js</PackagePath>
+      <Modified>2012-10-08T03:57:39.805</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\Observable.js">
       <PackagePath>js\lib\Observable.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.568</Modified>
+      <Modified>2013-01-22T07:52:26.753</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\underscore.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\underscore.js">
       <PackagePath>js\lib\underscore.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.638</Modified>
+      <Modified>2013-01-22T07:52:26.805</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\main.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\main.js">
       <PackagePath>js\main.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.639</Modified>
+      <Modified>2013-01-22T08:09:35.432</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\BlockItemPool.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\BlockItemPool.js">
       <PackagePath>js\model\BlockItemPool.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.642</Modified>
+      <Modified>2013-01-22T13:23:33.094</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\GameScoreModel.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\GameScoreModel.js">
       <PackagePath>js\model\GameScoreModel.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.642</Modified>
+      <Modified>2013-01-22T11:34:28.939</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\GameTimerModel.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\GameTimerModel.js">
       <PackagePath>js\model\GameTimerModel.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.647</Modified>
+      <Modified>2013-01-22T14:10:13.358</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\LogicBoard.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\LogicBoard.js">
       <PackagePath>js\model\LogicBoard.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.652</Modified>
+      <Modified>2013-01-22T12:54:02.085</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\RankModel.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\RankModel.js">
       <PackagePath>js\model\RankModel.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.652</Modified>
+      <Modified>2013-01-22T07:52:26.811</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\SearchAlgorithm.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\SearchAlgorithm.js">
       <PackagePath>js\model\SearchAlgorithm.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.656</Modified>
+      <Modified>2013-01-22T07:52:26.814</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\navigator.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\navigator.js">
       <PackagePath>js\navigator.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.662</Modified>
+      <Modified>2013-01-22T12:24:24.486</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\view\GameScoreView.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\sound.js">
+      <PackagePath>js\sound.js</PackagePath>
+      <Modified>2013-01-22T12:28:14.092</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\view\GameScoreView.js">
       <PackagePath>js\view\GameScoreView.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.665</Modified>
+      <Modified>2013-01-22T11:34:41.052</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\view\GameTimerView.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\view\GameTimerView.js">
       <PackagePath>js\view\GameTimerView.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.665</Modified>
+      <Modified>2013-01-22T12:58:08.776</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\view\LogicBoardView.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\view\LogicBoardView.js">
       <PackagePath>js\view\LogicBoardView.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.668</Modified>
+      <Modified>2013-01-22T13:23:39.557</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\js\view\RankView.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\view\RankView.js">
       <PackagePath>js\view\RankView.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.668</Modified>
+      <Modified>2013-01-22T07:52:26.819</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\about\about.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\about\about.js">
       <PackagePath>pages\about\about.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.675</Modified>
+      <Modified>2013-01-22T07:52:26.821</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\game\game.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\game\game.js">
       <PackagePath>pages\game\game.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.678</Modified>
+      <Modified>2013-01-22T07:52:26.822</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\help\help.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\help\help.js">
       <PackagePath>pages\help\help.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.681</Modified>
+      <Modified>2013-01-22T07:52:26.823</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\home\home.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\home\home.js">
       <PackagePath>pages\home\home.js</PackagePath>
-      <Modified>2013-01-01T09:04:00.163</Modified>
+      <Modified>2013-01-22T14:25:01.049</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\private\private.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\private\private.js">
       <PackagePath>pages\private\private.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.686</Modified>
+      <Modified>2013-01-22T07:52:26.825</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\ranking\ranking.js">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\ranking\ranking.js">
       <PackagePath>pages\ranking\ranking.js</PackagePath>
-      <Modified>2013-01-01T08:58:04.690</Modified>
+      <Modified>2013-01-22T12:24:37.926</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\about\about.html">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\about\about.html">
       <PackagePath>pages\about\about.html</PackagePath>
-      <Modified>2013-01-01T08:58:04.672</Modified>
+      <Modified>2013-01-22T14:05:12.298</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\game\game.html">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\game\game.html">
       <PackagePath>pages\game\game.html</PackagePath>
-      <Modified>2013-01-01T08:58:04.678</Modified>
+      <Modified>2013-01-22T12:57:22.024</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\help\help.html">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\help\help.html">
       <PackagePath>pages\help\help.html</PackagePath>
-      <Modified>2013-01-01T08:58:04.680</Modified>
+      <Modified>2013-01-22T08:16:25.994</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\home\home.html">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\home\home.html">
       <PackagePath>pages\home\home.html</PackagePath>
-      <Modified>2013-01-01T08:58:04.682</Modified>
+      <Modified>2013-01-22T13:44:05.668</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\default.html">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\default.html">
       <PackagePath>default.html</PackagePath>
-      <Modified>2013-01-01T08:58:04.545</Modified>
+      <Modified>2013-01-22T12:11:02.668</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\private\private.html">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\private\private.html">
       <PackagePath>pages\private\private.html</PackagePath>
-      <Modified>2013-01-01T08:58:04.685</Modified>
+      <Modified>2013-01-22T07:52:26.825</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\ranking\ranking.html">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\ranking\ranking.html">
       <PackagePath>pages\ranking\ranking.html</PackagePath>
-      <Modified>2013-01-01T08:58:04.688</Modified>
+      <Modified>2013-01-22T13:53:36.595</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\bin\Debug\resources.pri">
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\sound\bg_fast.mp3">
+      <PackagePath>sound\bg_fast.mp3</PackagePath>
+      <Modified>2013-01-22T12:00:19.888</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\sound\bg_slow.mp3">
+      <PackagePath>sound\bg_slow.mp3</PackagePath>
+      <Modified>2013-01-22T12:00:14.306</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\sound\patchpang.mp3">
+      <PackagePath>sound\patchpang.mp3</PackagePath>
+      <Modified>2013-01-22T11:50:55.543</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-01-01T09:01:03.881</Modified>
+      <Modified>2013-01-22T14:28:18.736</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

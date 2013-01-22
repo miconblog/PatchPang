@@ -3,36 +3,33 @@
  * @returns
  */
 var GameTimerModel = function () {
-    var TIME_LIMIT = 5;
-    var remainTime = TIME_LIMIT, // default 60 sec
-	nTick = null, lastTime, currTime;
+    var TIME_LIMIT = 60; // sec
+    var remainTime = TIME_LIMIT, nTick = null, lastTime, currTime;
+    var self = this;
+    var timer = collie.Timer.transition(function (e) {
+        remainTime = TIME_LIMIT * e.value;
+        self.notify("CHANGE_TIME", {
+            percent: e.value,
+            remainTime: remainTime,
+            totalTime: TIME_LIMIT
+        });
+    }, TIME_LIMIT * 1000, {
+        useAutoStart: false,
+        from: 1,
+        to: 0,
+        onComplete: function () {
+            remainTime = 0;
 
-	var self = this;
+            self.notify("END_TIME", {
+                percent: 0,
+                remainTime: remainTime,
+                totalTime: TIME_LIMIT
+            });
+        }
+    });
 	
-	this.start = function(nTime) {
-		lastTime = new Date().getTime();
-		nTick = setInterval(function() {
-
-			currTime = new Date().getTime();
-
-			if (currTime - lastTime > 1000) {
-				remainTime--;
-				lastTime = currTime;
-				
-				if(remainTime < 0){
-					remainTime = 0;
-					self.notify("END_TIME", {
-						remainTime : remainTime
-					});
-					self.stop();
-				}else{
-					self.notify("CHANGE_TIME", {
-						remainTime : remainTime
-					});
-				}
-			}
-		}, 100);
-
+	this.start = function() {
+	    timer.start();
 	},
 
 	/**
@@ -41,16 +38,17 @@ var GameTimerModel = function () {
 	 * @returns
 	 */
 	this.stop = function() {
-		if (nTick !== null) {
-			clearInterval(nTick);
-			nTick = null;
-		}
+	    timer.stop();
 	};
 	
 	this.reset = function(){
 	    remainTime = TIME_LIMIT;
-		self.notify("CHANGE_TIME", {
-			remainTime : remainTime
+	    timer.reset();
+	    self.notify("RESET_TIME", {});
+	    self.notify("CHANGE_TIME", {
+            percent: 1,
+		    remainTime: remainTime,
+		    totalTime: TIME_LIMIT
 		});
 	};
 };
