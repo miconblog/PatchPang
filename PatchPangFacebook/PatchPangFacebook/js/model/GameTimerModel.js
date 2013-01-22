@@ -3,6 +3,7 @@
  * @returns
  */
 var GameTimerModel = function () {
+<<<<<<< HEAD
     var TIME_LIMIT = 60; // sec
     var remainTime = TIME_LIMIT, nTick = null, lastTime, currTime;
     var self = this;
@@ -19,6 +20,11 @@ var GameTimerModel = function () {
         to: 0,
         onComplete: function () {
             remainTime = 0;
+=======
+
+	var remainTime = 60, // default 60 sec
+	nTick = null, lastTime, currTime;
+>>>>>>> 콤보모델 및 로직 버그 수정
 
             self.notify("END_TIME", {
                 percent: 0,
@@ -28,8 +34,35 @@ var GameTimerModel = function () {
         }
     });
 	
+<<<<<<< HEAD
 	this.start = function() {
 	    timer.start();
+=======
+	this.start = function(nTime) {
+		lastTime = new Date().getTime();
+		nTick = setInterval(function() {
+
+			currTime = new Date().getTime();
+
+			if (currTime - lastTime > 1000) {
+				remainTime--;
+				lastTime = currTime;
+				
+				if(remainTime <= 0){
+					remainTime = 0;
+					self.notify("END_TIME", {
+						remainTime : remainTime
+					});
+					self.stop();
+				}else{
+					self.notify("CHANGE_TIME", {
+						remainTime : remainTime
+					});
+				}
+			}
+		}, 100);
+
+>>>>>>> 콤보모델 및 로직 버그 수정
 	},
 
 	/**
@@ -42,6 +75,7 @@ var GameTimerModel = function () {
 	};
 	
 	this.reset = function(){
+<<<<<<< HEAD
 	    remainTime = TIME_LIMIT;
 	    timer.reset();
 	    self.notify("RESET_TIME", {});
@@ -49,6 +83,11 @@ var GameTimerModel = function () {
             percent: 1,
 		    remainTime: remainTime,
 		    totalTime: TIME_LIMIT
+=======
+		remainTime = 60;
+		self.notify("CHANGE_TIME", {
+			remainTime : remainTime
+>>>>>>> 콤보모델 및 로직 버그 수정
 		});
 	};
 };

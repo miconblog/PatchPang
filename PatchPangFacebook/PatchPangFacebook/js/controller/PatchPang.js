@@ -66,6 +66,10 @@ var PatchPang = function (boardLayer, bgLayer) {
 	});
 	new GameTimerView(this.timer, bgLayer);
 	
+	// 콤보 
+	this.combo = new ComboModel();
+	new ComboView(this.combo, bgLayer);
+	
 	// 게임 점수
 	this.score = new GameScoreModel();
 	this.score.observe({
@@ -79,7 +83,8 @@ var PatchPang = function (boardLayer, bgLayer) {
 	logic = new LogicBoard();
 	logic.observe({
 		"CHANGE_BOARD" : function(e){
-			this.score.calculatePoint( e.result );
+			this.combo.add();
+			this.score.calculatePoint( e.result, this.combo.count);
 			
 		}.bind(this)
 	});
@@ -93,7 +98,11 @@ PatchPang.prototype.reset = function(){
 	
 	logicView.activateUserEvent();
 	collie.Renderer.refresh();
+<<<<<<< HEAD
 	this.gameover.set("visible", false);
+=======
+	this.combo.reset();
+>>>>>>> 콤보모델 및 로직 버그 수정
 	this.score.reset();
 	this.timer.reset();
 	this.timer.start();
