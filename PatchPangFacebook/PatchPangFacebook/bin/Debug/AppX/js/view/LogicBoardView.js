@@ -143,7 +143,7 @@
 		var view = this;
 
 		this.isMovingBlocks = true;
-		
+
 		collie.Timer.cycle(function (e) {
 			_(indexes).each(function(v){
 				view.model.block[v].set({
@@ -153,16 +153,11 @@
 					spriteY : 0
 				});	
 			});
-			
-			if(e.count === 10) {
-				callback.apply(view);
-			}
-			
-			
 		}, 200, {
 		    valueSet : [0, 1, 2, 3, 4, 5, 4, 3, 2, 1],
 		    loop : 1,
-		    onComplete: function(){
+		    onComplete: function () {
+	            callback.apply(view);
 		    	view.isMovingBlocks = false;
 		    }
 		});
@@ -174,11 +169,11 @@
 		this.model.observe({
 
 			"CHANGE_BOARD" : function(e) {
-				console.log("============== CHANGE_BOARD ==============", e);					
-					// 일단 터질 녀석을 화면에서 효과를 내어 없앤다!
+			    console.log("============== CHANGE_BOARD ==============", e);			        Sound.start("effect" + (Math.round(Math.random() * 5) + 1));
+
+			        // 일단 터질 녀석을 화면에서 효과를 내어 없앤다!
 					this.animatePang(e.indexes, function(){
-						// 터진 자리를 메꾸는 객체를 만들어낸다. 						this.model.fillTheSpace();						this.clearBlocks();						this.model.fillTheItem();						console.log("========== CHANGE_BOARD END ==========");					});
-				
+						// 터진 자리를 메꾸는 객체를 만들어낸다. 						this.model.fillTheSpace();						this.clearBlocks();						this.model.fillTheItem();						console.log("========== CHANGE_BOARD END ==========");					});
 			}.bind(this),
 
 			

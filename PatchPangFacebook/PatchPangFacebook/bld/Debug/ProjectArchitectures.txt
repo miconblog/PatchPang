@@ -1,1 +1,1 @@
-C:\Users\sangmin\Documents\Visual Studio 2012\Projects\PatchPangFacebook\PatchPangFacebook\PatchPangFacebook.jsproj;neutral
+d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\PatchPangFacebook.jsproj;neutral

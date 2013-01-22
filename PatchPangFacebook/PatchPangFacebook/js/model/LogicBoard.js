@@ -3,6 +3,8 @@
 		logic = SearchAlgorithm;
 		ready = false;
 	
+
+
 	/**
 	 * 인덱싱
 	 */
@@ -52,6 +54,8 @@
 		this.curSelectIndex = -1;  	// 현재 선택한 아이템, 없으면 -1;
 		this.itemPool = new BlockItemPool(100);
 		
+		this.timerHint = null;
+		this.timerPatchpatch = null;
 
 		this.initializeWithTestSet();
 		this.initBoardItemPositioin();
@@ -461,22 +465,38 @@
 	 * 5초 힌트..
 	 */
 	LogicBoard.prototype.resetHint = function(){
-		if( this.hintTimer ){
-			clearTimeout( this.hintTimer );
-			this.hintTimer = null;
+		if (this.timerHint === null) {
+		    this.timerHint = collie.Timer.delay(this.findHint.bind(this), 5000, {
+		        useAutoStart: false
+		    });
 		}
-		
-		this.hintTimer = setTimeout(this.findHint.bind(this), 5000);
+
+		if (this.timerPatchpatch === null) {
+		    this.timerPatchpatch = collie.Timer.delay(function () {
+		        Sound.start("patchpatch");
+		    }.bind(this), 3000, {
+		        useAutoStart: false
+		    });
+		}
+
+		this.timerHint.stop();
+		this.timerHint.start();
+		this.timerPatchpatch.stop();
+		this.timerPatchpatch.start();
 	};
 	
 	
 	LogicBoard.prototype.findHint = function(){
 		if( this.hint ){
-			this.block[this.hint].set("spriteY", 1);
+		    this.block[this.hint].set("spriteY", 1);
+		    Sound.start("hint");
 		}else{
 			this.initializeWithoutPang();
 		}
 	};
-	
-	
+
+	LogicBoard.prototype.stop = function () {
+	    this.timerHint.stop();
+	    this.timerPatchpatch.stop();
+	};
 })();

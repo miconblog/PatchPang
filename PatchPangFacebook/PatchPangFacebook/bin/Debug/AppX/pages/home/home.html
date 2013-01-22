@@ -6,7 +6,7 @@
     <title>homePage</title>
 
     <!-- WinJS 참조 -->
-    <link href="//Microsoft.WinJS.1.0/css/ui-light.css" rel="stylesheet" />
+    <link href="//Microsoft.WinJS.1.0/css/ui-dark.css" rel="stylesheet" />
     <script src="//Microsoft.WinJS.1.0/js/base.js"></script>
     <script src="//Microsoft.WinJS.1.0/js/ui.js"></script>
 
@@ -19,17 +19,21 @@
         <header aria-label="Header content" role="banner">
             <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
             <h1 class="titlearea win-type-ellipsis">
-                <span class="pagetitle">PatchPangFacebook! 시작</span>
+                <!--<span class="pagetitle">PatchPangFacebook! 시작</span>-->
             </h1>
         </header>
         <section aria-label="Main content" role="main">
+            <img src="/images/logo.png" alt="logo" class="logo" />
+            <div id="result">
+                <p>페이스북 로그인을 먼저 해주세요</p>
+            </div>
+
             <div class="contents" id="home">
-                <button id="login">Facebook Login</button>
-                <!--button id="register">Register User</!--button-->
-                <button id="startGame">Start Game</button>
-                <!--button id="ranking">Ranking</button-->
-                <br />
-                <textarea cols="100" rows="10" id="result"></textarea>
+                <div>
+                    <button id="login"><img src="/images/button_login.png" border="0" /></button>
+                    <button id="logout" style="display:none;"><img src="/images/button_logout.png" border="0" /></button>
+                </div>
+                <button id="startGame"><img src="/images/button_start.png" border="0" /></button>
             </div>
         </section>
     </div>

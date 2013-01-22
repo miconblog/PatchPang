@@ -10,11 +10,13 @@
             function PageControlNavigator(element, options) {
                 this._element = element || document.createElement("div");
                 this._element.appendChild(this._createPageElement());
+                this._clearHistory = false;
 
                 this.home = options.home;
                 this._lastViewstate = appView.value;
 
                 nav.onnavigated = this._navigated.bind(this);
+                nav.onbeforenavigate = this._beforeNavigate.bind(this);
                 window.onresize = this._resized.bind(this);
 
                 document.body.onkeyup = this._keyupHandler.bind(this);
@@ -84,6 +86,16 @@
                     }
                 },
 
+                _beforeNavigate: function (e) {
+                    if (
+                        (e.detail.state && e.detail.state.isAfterGame) ||
+                        e.detail.location.indexOf("game") !== -1 ||
+                        e.detail.location.indexOf("home") !== -1
+                        ) {
+                        this._clearHistory = true;
+                    }
+                },
+
                 // 이동에 응답하여 DOM에 새 페이지를 추가합니다.
                 _navigated: function (args) {
                     var newElement = this._createPageElement();
@@ -91,6 +103,12 @@
                     var parented = new WinJS.Promise(function (c) { parentedComplete = c; });
 
                     this._lastNavigationPromise.cancel();
+
+                    if (this._clearHistory) {
+                        nav.history.backStack = [];
+                        nav.history.forwardStack = [];
+                        this._clearHistory = false;
+                    }
 
                     this._lastNavigationPromise = WinJS.Promise.timeout().then(function () {
                         return WinJS.UI.Pages.render(args.detail.location, newElement, args.detail.state, parented);

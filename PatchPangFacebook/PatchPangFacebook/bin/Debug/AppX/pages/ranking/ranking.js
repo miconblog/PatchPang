@@ -39,6 +39,11 @@
         },
 
         setRankingData: function (rankingList) {
+            // 페이지 나가고 xhr complete 발생하면 취소
+            if (!document.getElementById("rankingList")) {
+                return false;
+            }
+
             var list = new WinJS.Binding.List();
 
             rankingList.forEach(function (item, index) {
@@ -65,6 +70,7 @@
                 if (result.status === 200) {
                     var response = JSON.parse(result.responseText);
                     console.log(result.responseText);
+
                     if (response.success == "OK") {
                         this.setRankingData(response.ranking);
                     } else {
