@@ -16,7 +16,7 @@
     <AppXManifest Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\bin\Debug\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-01-22T12:10:07.135</Modified>
+      <Modified>2013-01-22T14:28:37.218</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +163,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\collie.js">
       <PackagePath>js\lib\collie.js</PackagePath>
-      <Modified>2013-01-22T14:09:35.696</Modified>
+      <Modified>2013-01-22T14:28:36.368</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\lib\jquery.js">
       <PackagePath>js\lib\jquery.js</PackagePath>
@@ -199,7 +199,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\GameTimerModel.js">
       <PackagePath>js\model\GameTimerModel.js</PackagePath>
-      <Modified>2013-01-22T13:27:36.476</Modified>
+      <Modified>2013-01-22T14:10:13.358</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\LogicBoard.js">
       <PackagePath>js\model\LogicBoard.js</PackagePath>
@@ -251,7 +251,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\home\home.js">
       <PackagePath>pages\home\home.js</PackagePath>
-      <Modified>2013-01-22T13:40:03.868</Modified>
+      <Modified>2013-01-22T14:25:01.049</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\private\private.js">
       <PackagePath>pages\private\private.js</PackagePath>
@@ -303,7 +303,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\bin\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-01-22T12:10:07.084</Modified>
+      <Modified>2013-01-22T14:28:18.736</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

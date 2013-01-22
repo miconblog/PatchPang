@@ -19,7 +19,7 @@ var GameTimerModel = function () {
 				remainTime--;
 				lastTime = currTime;
 				
-				if(remainTime < 0){
+				if(remainTime <= 0){
 					remainTime = 0;
 					self.notify("END_TIME", {
 						remainTime : remainTime

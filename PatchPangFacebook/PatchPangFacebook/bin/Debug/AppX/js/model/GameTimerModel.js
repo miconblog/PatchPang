@@ -3,7 +3,7 @@
  * @returns
  */
 var GameTimerModel = function () {
-    var TIME_LIMIT = 1; // sec
+    var TIME_LIMIT = 60; // sec
     var remainTime = TIME_LIMIT, nTick = null, lastTime, currTime;
     var self = this;
     var timer = collie.Timer.transition(function (e) {

@@ -7,6 +7,7 @@
         ready: function (element, options) {
             // TODO: 페이지를 초기화합니다.
             if (localSettings.values["accessToken"]) {
+                validateToken();
                 element.querySelector("#login").style.display = "none";
                 element.querySelector("#logout").style.display = "block";
                 element.querySelector("#logout").addEventListener("click", logoutFacebook, false);
@@ -61,6 +62,21 @@
                 console.log(err);
             });
 
+    }
+    
+    function validateToken() {
+        WinJS.xhr({
+            url: "https://graph.facebook.com/me?access_token=" + getAccessToken()
+        }).done(function (result) {
+            if (result.status === 200) {
+                
+            }
+        }, function (err) {
+            var response = JSON.parse(err.responseText);
+            if (response.error.type == "OAuthException") {
+                loginFacebook();
+            }
+        });
     }
 
     //TODO 로그아웃
