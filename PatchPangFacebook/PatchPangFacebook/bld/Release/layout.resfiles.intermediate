@@ -1,10 +1,19 @@
 css\default.css
 default.html
 images\ani.png
+images\b00.png
+images\b01.png
+images\b02.png
+images\b03.png
+images\b04.png
+images\b05.png
+images\b06.png
 images\button_login.png
 images\button_logout.png
 images\button_start.png
 images\character.png
+images\character_normal.png
+images\character_select.png
 images\combo.png
 images\combo_number.png
 images\combo_number_small.png
@@ -46,7 +55,6 @@ js\view\ComboView.js
 js\view\GameScoreView.js
 js\view\GameTimerView.js
 js\view\LogicBoardView.js
-js\view\RankView.js
 pages\about\about.css
 pages\about\about.html
 pages\about\about.js
@@ -59,6 +67,9 @@ pages\help\help.js
 pages\home\home.css
 pages\home\home.html
 pages\home\home.js
+pages\make\make.css
+pages\make\make.html
+pages\make\make.js
 pages\private\private.css
 pages\private\private.html
 pages\private\private.js

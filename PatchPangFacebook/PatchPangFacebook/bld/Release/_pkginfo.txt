@@ -1,1 +1,1 @@
-C:\Users\Byungseo\Documents\GitHub\PatchPang\PatchPangFacebook\PatchPangFacebook\AppPackages\PatchPangFacebook_1.0.0.1_AnyCPU_Test\PatchPangFacebook_1.0.0.1_AnyCPU.appx
+D:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\AppPackages\PatchPangFacebook_1.0.0.8_AnyCPU_Test\PatchPangFacebook_1.0.0.8_AnyCPU.appx

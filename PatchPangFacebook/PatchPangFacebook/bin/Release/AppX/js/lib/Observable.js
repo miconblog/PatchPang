@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @overview Observable Class - add event callbacks & invoke messages
  * @author ByungDae, SOHN(miconblog@gmail.com)
  * 

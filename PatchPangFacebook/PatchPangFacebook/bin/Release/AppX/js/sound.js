@@ -6,7 +6,7 @@
 		spritemap: {
 			"bg": {
 				"start": 0.00,
-				"end": 60.00,
+				"end": 45.00,
 				loop: false
 			}
 		}
@@ -18,8 +18,8 @@
         ],
         spritemap: {
             "bg": {
-                "start": 45.00,
-                "end": 60.00,
+                "start": 0.00,
+                "end": 20.00,
                 loop: false
             }
         }

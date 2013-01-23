@@ -1,0 +1,23 @@
+﻿section[role="main"] {
+    margin-left: 120px;
+}
+
+#block_container {
+    position: relative;
+    width: 854px;
+    height: 254px;
+}
+
+.canvas {
+    float: left;
+    width: 120px;
+    height: 120px;
+    border: 1px solid #aaa;
+    background-color: #ccc;
+}
+
+#button_make, #button_reset {
+    background-color:#333;
+    font-size: 1.3em;
+    padding:7px 10px;
+}
