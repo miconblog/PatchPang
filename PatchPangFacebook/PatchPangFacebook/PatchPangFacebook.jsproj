@@ -47,7 +47,9 @@
     <TargetPlatformIdentifier>Windows</TargetPlatformIdentifier>
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>ko-KR</DefaultLanguage>
-    <PackageCertificateKeyFile>PatchPangFacebook_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateKeyFile>PatchPangFacebook_StoreKey.pfx</PackageCertificateKeyFile>
+    <PackageCertificateThumbprint>8A6205971D71EF69C52478AF8B19006B25F520D0</PackageCertificateThumbprint>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
@@ -89,17 +91,19 @@
     <Content Include="js\lib\underscore.js" />
     <Content Include="js\main.js" />
     <Content Include="js\model\BlockItemPool.js" />
+    <Content Include="js\model\ComboModel.js" />
     <Content Include="js\model\GameScoreModel.js" />
     <Content Include="js\model\GameTimerModel.js" />
     <Content Include="js\model\LogicBoard.js" />
-    <Content Include="js\model\RankModel.js" />
     <Content Include="js\model\SearchAlgorithm.js" />
     <Content Include="js\navigator.js" />
     <Content Include="js\sound.js" />
+    <Content Include="js\view\ComboView.js" />
     <Content Include="js\view\GameScoreView.js" />
     <Content Include="js\view\GameTimerView.js" />
     <Content Include="js\view\LogicBoardView.js" />
     <Content Include="js\view\RankView.js" />
+    <None Include="Package.StoreAssociation.xml" />
     <Content Include="pages\about\about.css" />
     <Content Include="pages\about\about.html" />
     <Content Include="pages\about\about.js" />
@@ -119,6 +123,7 @@
     <Content Include="pages\ranking\ranking.css" />
     <Content Include="pages\ranking\ranking.html" />
     <Content Include="pages\ranking\ranking.js" />
+    <None Include="PatchPangFacebook_StoreKey.pfx" />
     <Content Include="sound\bg_fast.mp3" />
     <Content Include="sound\bg_slow.mp3" />
     <Content Include="sound\patchpang.mp3" />

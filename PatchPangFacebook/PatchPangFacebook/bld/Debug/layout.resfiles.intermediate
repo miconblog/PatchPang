@@ -35,13 +35,14 @@ js\lib\Observable.js
 js\lib\underscore.js
 js\main.js
 js\model\BlockItemPool.js
+js\model\ComboModel.js
 js\model\GameScoreModel.js
 js\model\GameTimerModel.js
 js\model\LogicBoard.js
-js\model\RankModel.js
 js\model\SearchAlgorithm.js
 js\navigator.js
 js\sound.js
+js\view\ComboView.js
 js\view\GameScoreView.js
 js\view\GameTimerView.js
 js\view\LogicBoardView.js

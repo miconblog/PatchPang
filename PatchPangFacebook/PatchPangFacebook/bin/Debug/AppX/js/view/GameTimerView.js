@@ -54,7 +54,7 @@ GameTimerView.prototype.reset = function () {
 GameTimerView.prototype.initModelEvent = function(){
 	this.model.observe({
 	    "CHANGE_TIME": function (oData) {
-	        this.timer.set("scaleX", oData.percent);
+	        this.timer.set("scaleX", oData.percent * 0.93 + 0.07);
 
 	        if (!this._check30 && oData.remainTime <= 30) {
 	            // 30초

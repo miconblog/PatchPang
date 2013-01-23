@@ -1,6 +1,10 @@
 ﻿(function () {
     "use strict";
 
+    document.getElementById("logout").addEventListener("click", function () {
+        logoutFacebook();
+    });
+
     WinJS.UI.Pages.define("/pages/home/home.html", {
         // 이 함수는 사용자가 이 페이지로 이동할 때마다 호출되어
         // 페이지 요소를 응용 프로그램 데이터로 채웁니다.
@@ -8,9 +12,6 @@
             // TODO: 페이지를 초기화합니다.
             if (localSettings.values["accessToken"]) {
                 validateToken();
-                element.querySelector("#login").style.display = "none";
-                element.querySelector("#logout").style.display = "block";
-                element.querySelector("#logout").addEventListener("click", logoutFacebook, false);
                 showName();
             } else {
                 element.querySelector("#login").addEventListener("click", loginFacebook, false);
@@ -19,28 +20,34 @@
             element.querySelector("#startGame").addEventListener("click", startGame, false);
             this.appbar = document.getElementById("appbar").winControl;
             this.appbar.hideCommands(["back"]);
+            this.appbar.showCommands(["logout"]);
+            
         },
 
         unload: function () {
             this.appbar.showCommands(["back"]);
+            this.appbar.hideCommands(["logout"]);
         }
     });
 
     function showName() {
         if (localSettings.values["id"]) {
+            document.querySelector("#login").style.display = "none";
             document.getElementById("result").innerHTML =
-                "<img src='https://graph.facebook.com/" + localSettings.values["id"] + "/picture' class='picture' /><br />" + 
+                "<img src='https://graph.facebook.com/" + localSettings.values["id"] + "/picture' class='picture' /><br />" +
                 localSettings.values["name"] + "님 환영합니다!";
+        } else {
+            document.getElementById("result").innerHTML = "페이스북 로그인을 해주세요";
         }
     }
 
     var localSettings = Windows.Storage.ApplicationData.current.localSettings;
-    var facebookAppID = "263493547007128";
-    var facebookAppSecret = "6915896fc234c71ca5dd9c8965d0802f";
+    var facebookAppID = "575414935818797";
+    var facebookAppSecret = "c33f02850e4828e23b2dee7e5eba9e3a";
     var facebookCallbackURL = "https://www.facebook.com/connect/login_success.html";
 
     function loginFacebook() {
-
+        console.log(1);
         var facebookURL = "https://www.facebook.com/dialog/oauth?client_id=" + facebookAppID +
             "&redirect_uri=" + encodeURIComponent(facebookCallbackURL) + "&scope=read_stream&display=popup&response_type=token";
 
@@ -81,6 +88,10 @@
 
     //TODO 로그아웃
     function logoutFacebook() {
+        localSettings.values["accessToken"] = null;
+        localSettings.values["id"] = null;
+        document.querySelector("#login").style.display = "block";
+        showName();
     }
 
     function startGame() {

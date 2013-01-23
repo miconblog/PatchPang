@@ -19,7 +19,6 @@ var GameTimerModel = function () {
         to: 0,
         onComplete: function () {
             remainTime = 0;
-
             self.notify("END_TIME", {
                 percent: 0,
                 remainTime: remainTime,
