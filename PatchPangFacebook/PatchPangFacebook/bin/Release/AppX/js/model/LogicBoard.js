@@ -55,6 +55,10 @@
 	};
 	LogicBoard.prototype = new Observable();
 
+	LogicBoard.prototype.resetItem = function () {
+	    this.itemPool.reset();
+	};
+
 	/**
 	 * 보드 아이템의 위치를 초기화 한다.
 	 */

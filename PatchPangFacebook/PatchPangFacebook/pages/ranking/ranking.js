@@ -30,7 +30,7 @@
                 });
             }
 
-            if (options && options.score) {
+            if (options && options.bestScore) {
                 elUpdateMyScore.style.display = "block";
                 elScore.innerHTML = options.score;
 

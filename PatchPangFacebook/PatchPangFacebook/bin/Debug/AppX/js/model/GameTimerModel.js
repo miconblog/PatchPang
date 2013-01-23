@@ -3,7 +3,7 @@
  * @returns
  */
 var GameTimerModel = function () {
-    var TIME_LIMIT = 1; // sec
+    var TIME_LIMIT = 60; // sec
     var remainTime = TIME_LIMIT;
     var nTick = null;
     var lastTime, currTime;

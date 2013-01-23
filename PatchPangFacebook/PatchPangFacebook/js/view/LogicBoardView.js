@@ -186,10 +186,11 @@
         collie.Timer.cycle(function (e) {
             _(indexes).each(function (v) {
                 view.model.block[v].set({
-                    offsetY: 0,
-                    offsetX: 0,
-                    spriteX: e.value,
-                    spriteY: 0,
+                    //offsetY: 0,
+                    //offsetX: 0,
+                    //spriteX: e.value,
+                    //spriteY: 0,
+                    spriteY: 1,
                     isMoving: true
                 });
             });

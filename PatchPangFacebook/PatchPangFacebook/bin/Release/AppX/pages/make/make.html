@@ -18,11 +18,23 @@
         <header aria-label="Header content" role="banner">
             <button class="win-backbutton" aria-label="Back" disabled type="button"></button>
             <h1 class="titlearea win-type-ellipsis">
-                <span class="pagetitle">make 시작</span>
+                <span class="pagetitle">블럭 생성</span>
             </h1>
         </header>
         <section aria-label="Main content" role="main">
-            <p>콘텐츠 위치</p>
+            <p>
+                자신만의 블럭을 만들어보세요! 컴퓨터에 있는 이미지나 카메라로 찍은 사진으로 블럭을 만들 수 있습니다.<br />
+                <strong>아래 빈 회색 상자를 누르면 사진을 찍을 수 있습니다.</strong>
+            </p>
+            <div id="block_container">
+            </div>
+            <br />
+            <button id="button_make">블럭 생성하기</button>
+            <button id="button_reset">블럭 초기화</button>
+<!--            <div style="display:inline-block">
+                <button id="button1">카메라</button>
+                <button id="button2">블럭 생성하기</button>
+            </div>-->
         </section>
     </div>
 </body>

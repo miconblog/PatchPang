@@ -54,6 +54,9 @@
 			    // 점수 등록
 			    WinJS.xhr({
 			        type: "PUT",
+			        headers: {
+			            "Content-Type": "application/json"
+			        },
 			        url: "http://miconblog.com:8888/api/record/" + localSettings.values["id"],
 			        data: JSON.stringify({
 			            score: score,
@@ -70,22 +73,12 @@
 			            term = timeLimit - duringTime;
 			        }
 
-			        //console.log("end!!!!!!!!!!!!!!!!!!!!!!!");
-			        //console.log("http://miconblog.com:8888/api/record/" + localSettings.values["id"]);
-			        //console.log(JSON.stringify({
-			        //    score: score,
-			        //    id: localSettings.values["id"],
-			        //    token: localSettings.values["accessToken"]
-			        //}));
-			        //console.log(result.responseText);
-			        //console.log(resultData.data && resultData.data.beforeBestScore ? resultData.data.beforeBestScore : 0);
-
 			        // 랭킹 페이지로 이동
 			        setTimeout(function () {
 			            WinJS.Navigation.navigate("/pages/ranking/ranking.html", {
 			                isAfterGame: true,
 			                score: score,
-			                bestScore: resultData.data && resultData.data.beforeBestScore ? resultData.data.beforeBestScore : 0
+			                bestScore: resultData.data && resultData.data.code == 2 ? true : false
 			            });
 			        }, Math.max(0, term));
 			    }, function (err) {
@@ -111,15 +104,15 @@
 	new GameScoreView(this.score, bgLayer);
 	
 	// 로직 보드
-	logic = new LogicBoard();
-	logic.observe({
+    logic = new LogicBoard();
+    logic.observe({
 		"CHANGE_BOARD" : function(e){
 			this.combo.add();
 			this.score.calculatePoint( e.result, this.combo.count);
 			
 		}.bind(this)
 	});
-	logicView = new LogicBoardView(logic, boardLayer);
+    logicView = new LogicBoardView(logic, boardLayer);
 };
 
 PatchPang.prototype.reset = function(){
@@ -130,6 +123,7 @@ PatchPang.prototype.reset = function(){
 	logicView.activateUserEvent();
 	collie.Renderer.refresh();
 
+	logic.resetItem();
 	this.gameover.set("visible", false);
 	this.combo.reset();
 	this.score.reset();

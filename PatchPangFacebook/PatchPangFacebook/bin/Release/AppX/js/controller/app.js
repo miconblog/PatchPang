@@ -1,5 +1,7 @@
 ﻿var SIZE = 60;
 
+var localSettings = Windows.Storage.ApplicationData.current.localSettings;
+
 // logo.png 이미지를 로딩한다
 collie.ImageManager.add({
     "timer_back": "/images/timer_bar_back.png",
@@ -11,7 +13,7 @@ collie.ImageManager.add({
     "combo_number": "/images/combo_number.png",
     "combo_number_small": "/images/combo_number_small.png",
     "game_over": "/images/game_over.png",
-    "animal": "/images/ani.png"
+    "animal": localSettings.values["myBlock"] ? localSettings.values["myBlock"] : "/images/ani.png",
 });
 
 // 레이어를 만든다
