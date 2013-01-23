@@ -1,4 +1,4 @@
-
+﻿
 (function () { /** @globals */
 	if (typeof Box2D === "undefined") {
 		return;

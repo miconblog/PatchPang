@@ -1,4 +1,4 @@
-/**
+﻿/**
  * 게임 점수 모델
  * 
  * @returns
@@ -66,13 +66,11 @@ GameScoreModel.prototype.calculatePoint = function(result, combo) {
 				bonus = points * [combo+1] * 1;
 			}
 
-			console.log("보너스 포인트: ", bonus)
 			points += bonus;
 		}
 
 	});
 
-	console.log("총 추가 점수: ", points)
 	this.plus(points);
 };
 

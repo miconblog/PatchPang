@@ -1,4 +1,4 @@
-var Rank = Backbone.Model.extend({
+﻿var Rank = Backbone.Model.extend({
 	urlRoot : "/api/record"
 });
 

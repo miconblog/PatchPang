@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type='text/xsl' href='C:\ProgramData\Windows App Certification Kit\results.xsl'?>
+<REPORT OVERALL_RESULT="PASS" VERSION="2.0.9200" TOOLSET_ARCHITECTURE="X64" SecureBoot="FALSE" APP_TYPE="WindowsStore" PUBLISHER_DISPLAY_NAME="Byungseo Lee" OSVERSION="6.2.9200.0" OS="Microsoft Windows 8 Pro K" PER_USER_APPLICATION="" PARTIAL_RUN="FALSE" LCID="1042" VALIDATION_TYPE="CommandLine" ReportGenerationTime="2013-01-23 오후 3:21:42" ID="6769b7200dd9be898ca23dc4c80c47f3">
+  <REQUIREMENTS>
+    <REQUIREMENT NUMBER="1" TITLE="완벽 설치 제거 테스트" RATIONALE="정리, 해독 가능, 설치를 사용하여 시스템에서 앱을 관리(배포 및 제거)할 수 있습니다." />
+    <REQUIREMENT NUMBER="2" TITLE="올바른 폴더에 설치 테스트" RATIONALE="Windows는 파일 시스템에 프로그램과 소프트웨어 구성 요소, 공유 앱 데이터 및 사용자별 앱 데이터를 저장할 특정 위치를 제공합니다." />
+    <REQUIREMENT NUMBER="3" TITLE="디지털 서명된 파일 테스트" RATIONALE="사용자는 Authenticode 디지털 서명을 통해 소프트웨어가 정품임을 확인할 수 있습니다. 또한 파일이 변경되었는지(예: 바이러스에 감염) 여부도 알 수 있습니다." />
+    <REQUIREMENT NUMBER="4" TITLE="x64 Windows 지원 테스트" RATIONALE="64비트 버전의 Windows와의 호환성을 유지하려면 앱이 처음부터 64비트의 Windows 기반 앱을 지원하거나, 64비트에서 원활하게 실행되는 최소 32비트의 Windows 기반 앱을 지원해야 합니다." />
+    <REQUIREMENT NUMBER="5" TITLE="OS 버전 검사 테스트" RATIONALE="앱은 동등(== 5.1)에 대해 버전 확인을 수행하지 않아야 합니다. 특정 기능이 필요한 경우에는 해당 기능을 사용할 수 있는지 확인하십시오. Windows XP가 필요한 경우 Windows XP 이상(&gt;= 5.1)을 확인하십시오. 그렇게 하면 검색 코드가 이후 버전의 Windows에서 계속 작동합니다. 드라이버 설치 관리자 및 제거 모듈은 OS 버전을 확인하지 않아야 합니다." />
+    <REQUIREMENT NUMBER="6" TITLE="UAC(사용자 계정 컨트롤) 테스트" RATIONALE="대부분의 앱은 실행 시 관리자 권한이 필요하지 않으며 표준 사용자로 실행할 수 있으면 됩니다. 앱을 실행하는 데 필요한 권한을 OS에 알려주는 실행 수준을 정의하려면 Windows 앱에 포함된 매니페스트나 외부 매니페스트가 있어야 합니다." />
+    <REQUIREMENT NUMBER="7" TITLE="시스템 다시 시작 관리자 메시지 준수" RATIONALE="중요 종료 시 WM_QUERYENDSESSION에 FALSE를 반환하는 앱은 WM_ENDSESSION을 받고 종료되지만, WM_QUERYENDSESSION에 대한 응답에 시간이 초과된 앱은 중단됩니다." />
+    <REQUIREMENT NUMBER="8" TITLE="안전 모드 테스트" RATIONALE="기본적으로 Windows와 함께 사전 설치되지 않는 드라이버와 서비스는 대부분 안전 모드로 시작되지 않습니다. 시스템 기본 작동이나 진단 및 복구 목적에 필요하지 않은 경우에는 해당 드라이버와 서비스가 사용할 수 없는 상태로 남아 있어야 합니다." />
+    <REQUIREMENT NUMBER="9" TITLE="다중 사용자 세션 테스트" RATIONALE="Windows 사용자는 충돌이나 장애 없이 동시 세션을 실행할 수 있어야 합니다. 앱은 여러 세션에서 로컬이나 원격으로 실행 중일 때 앱의 일반 기능이 영향을 받지 않아야 합니다. 앱 설정 및 데이터 파일은 사용자 간에 유지되지 않아야 합니다. 사용자의 개인 정보 및 기본 설정은 사용자의 세션으로 격리되어야 합니다." />
+    <REQUIREMENT NUMBER="10" TITLE="충돌 및 중단 테스트" RATIONALE="충돌 및 중단과 같은 앱 오류는 사용자에게 큰 영향을 주며 불만의 원인이 됩니다. 그러한 오류를 제거하면 전반적으로 앱 안정성이 향상되고 사용자에게 향상된 앱 환경을 제공할 수 있습니다.">
+      <TEST INDEX="47" NAME="앱 실행 테스트" DESCRIPTION="앱 실행을 테스트합니다." EXECUTIONTIME="00h:00m:21s.69ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="21" NAME="충돌 및 중단" DESCRIPTION="테스트 프로세스 중에 충돌하거나 중단된 실행 파일을 설치하지 않습니다." EXECUTIONTIME="00h:00m:03s.76ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="11" TITLE="호환성 및 복구 테스트" RATIONALE="Windows에서는 앱이 호환되지 않는 방식으로 작동하는 것을 감지하면 앱이 올바르게 동작하도록 호환성 수정을 적용하여 안정적인 사용자 환경을 만듭니다. 호환성 수정은 기존 앱이 Windows에서 올바르게 작동할 수 있게 하기 위해 제공되는 것이므로 앱은 이러한 동작에 의존하지 않아야 합니다." />
+    <REQUIREMENT NUMBER="12" TITLE="앱 매니페스트 준수 테스트" RATIONALE="패키지 매니페스트에 한 개 이상의 필수 특성이 없습니다.">
+      <TEST INDEX="31" NAME="앱 매니페스트" DESCRIPTION="앱 매니페스트에 모든 필수 필드에 대한 올바른 항목이 있어야 합니다." EXECUTIONTIME="00h:00m:02s.00ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="13" TITLE="Windows 보안 모범 사례 테스트" RATIONALE="앱이 기본 Windows 보안 설정을 변경하지 않아야 합니다." />
+    <REQUIREMENT NUMBER="14" TITLE="Windows 보안 기능 테스트" RATIONALE="앱은 Windows 보안 기능을 옵트인(opt in)해야 합니다.">
+      <TEST INDEX="33" NAME="이진 분석기" DESCRIPTION="이진 파일에서 사용할 수 있는 보안 기능 분석" EXECUTIONTIME="00h:00m:01s.35ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="15" TITLE="지원되는 API 테스트" RATIONALE="앱은 Windows 스토어 앱용 Windows SDK에서 허용한 API만 참조해야 합니다.">
+      <TEST INDEX="38" NAME="지원되는 API" DESCRIPTION="Windows 스토어 앱은 지원되는 플랫폼 API만 사용해야 합니다." EXECUTIONTIME="00h:00m:02s.47ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="17" TITLE="성능 테스트" RATIONALE="이전에 열지 않은 앱 간에 서로 빠르게 전환하고 멀티태스킹 작업을 수행하려면 앱이 적절한 양의 시스템 리소스(CPU, 파일 IO, 메모리 등)를 사용하면서 빠르고 즉각적으로 시작하고 일시 중단할 수 있어야 합니다.">
+      <TEST INDEX="50" NAME="바이트 코드 생성" DESCRIPTION="바이트 코드를 생성하여 HTML5 Windows 스토어 앱이 포함된 패키지를 완성할 수 있어야 합니다." EXECUTIONTIME="00h:00m:01s.26ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="43" NAME="성능 실행" DESCRIPTION="앱이 적절하게 CPU, 파일 IO 및 메모리를 사용하면서 빠르게 실행되어야 합니다." EXECUTIONTIME="00h:01m:32s.76ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="44" NAME="성능 일시 중단" DESCRIPTION="앱이 적절하게 CPU 및 파일 IO를 사용하면서 빠르게 일시 중단되어야 합니다." EXECUTIONTIME="00h:01m:23s.38ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="19" TITLE="앱 매니페스트 리소스 테스트" RATIONALE="Appx 패키지 매니페스트에는 Appx 패키징 사양 및 Appx 매니페스트 스키마에 따라 resources.pri 파일에 유효한 리소스가 정의되어 있어야 합니다.">
+      <TEST INDEX="45" NAME="앱 리소스 유효성 검사" DESCRIPTION="패키지에 resources.pri 파일에 정의된 유효한 리소스가 있어야 합니다." EXECUTIONTIME="00h:00m:00s.58ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="20" TITLE="디버그 구성 테스트" RATIONALE="앱이 디버그 버전의 이진 파일을 설치하지 않아야 합니다.">
+      <TEST INDEX="46" NAME="디버그 구성" DESCRIPTION="앱이 디버그 버전의 이진 파일을 설치하지 않아야 합니다." EXECUTIONTIME="00h:00m:01s.94ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="21" TITLE="파일 인코딩" RATIONALE="HTML5 Windows 스토어 앱이 포함된 패키지에 올바른 파일 인코딩이 있어야 합니다.">
+      <TEST INDEX="49" NAME="UTF-8 파일 인코딩" DESCRIPTION="HTML5 Windows 스토어 앱이 포함된 패키지에 올바른 파일 인코딩이 있어야 합니다." EXECUTIONTIME="00h:00m:01s.21ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="22" TITLE="Direct3D 기능 수준 지원" RATIONALE="응용 프로그램이 Direct3D 기능 수준 9.1 하드웨어에 대한 콘텐츠를 렌더링해야 합니다.">
+      <TEST INDEX="51" NAME="Direct3D 기능 수준 지원" DESCRIPTION="응용 프로그램이 Direct3D 기능 수준 9.1 하드웨어에 대한 콘텐츠를 렌더링해야 합니다." EXECUTIONTIME="00h:00m:00s.64ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="23" TITLE="앱 기능 테스트" RATIONALE="특수 사용 기능을 선언한 패키지는 온보딩 프로세스 중에 사유를 제공해야 합니다.">
+      <TEST INDEX="52" NAME="특수 사용 기능" DESCRIPTION="특수 사용 기능을 선언한 패키지는 온보딩 프로세스 중에 사유를 제공해야 합니다." EXECUTIONTIME="00h:00m:01s.19ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+    <REQUIREMENT NUMBER="24" TITLE="Windows 런타임 메타데이터 유효성 검사" RATIONALE="메타데이터가 규칙에 맞아야 하고 모든 생성 원본에서 일치해야 합니다.">
+      <TEST INDEX="56" NAME="ExclusiveTo 특성 테스트" DESCRIPTION="클래스는 다른 ExclusiveTo 클래스로 표시된 인터페이스를 구현하지 않아야 합니다." EXECUTIONTIME="00h:00m:00s.94ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="57" NAME="형식 위치 테스트" DESCRIPTION="형식은 일치하는 가장 긴 네임스페이스를 가진 메타데이터 파일에 정의해야 합니다." EXECUTIONTIME="00h:00m:00s.57ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="55" NAME="유형 이름 대/소문자 구분 테스트" DESCRIPTION="네임스페이스 및 유형 이름은 대/소문자만 다르면 안 됩니다." EXECUTIONTIME="00h:00m:00s.58ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="54" NAME="유형 이름 수정 테스트" DESCRIPTION="시스템 종류만 Windows 네임스페이스에 있을 수 있으며 어떤 종류도 글로벌 네임스페이스에 있을 수 없습니다." EXECUTIONTIME="00h:00m:00s.58ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="58" NAME="일반 메타데이터 수정 테스트" DESCRIPTION="유효하고 올바른 메타데이터 파일은 여러 요구 사항을 충족해야 합니다." EXECUTIONTIME="00h:00m:00s.93ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+      <TEST INDEX="53" NAME="속성 테스트" DESCRIPTION="쓰기 전용 및 인덱서 속성을 사용할 수 없습니다. 해당 getter 및 setter 메서드 유형이 일치해야 합니다." EXECUTIONTIME="00h:00m:00s.57ms">
+        <RESULT><![CDATA[PASS]]></RESULT>
+        <MESSAGES />
+      </TEST>
+    </REQUIREMENT>
+  </REQUIREMENTS>
+  <APPLICATIONS>
+    <Installed_Programs>
+      <Program Name="50455ByungseoLee.PatchPang" Type="Application" Source="AppxPackage" Publisher="CN=024CFF8F-9182-4479-B55F-4CB6DD72D7AF" Version="1.0.0.3" Language="1033" OnSystemDrive="true" RootDirPath="C:\Program Files\WindowsApps\50455ByungseoLee.PatchPang_1.0.0.3_neutral__zqb4kbs0j99c6" PathEvidenceId="0x1c60" RNP="0x1" DNP="0xd" EvidenceId="0x1c60" Id="0000bc647854bff72e95f7b22ac9740d624500000904">
+        <Indicators>
+          <DirectoryIndicators>
+            <Directory Name="lib" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib" RNP="0x9" DNP="0xb" UniqueId="0x1c6d" Id="0000244ddb0987fcccfe1d1cd79097b320e2fc529cc4" />
+            <Directory Name="about" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\about" RNP="0x9" DNP="0xb" UniqueId="0x1c86" Id="000095a89a47482232b8213a02fc7ed3162546ee0da4" />
+            <Directory Name="game" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\game" RNP="0x9" DNP="0xb" UniqueId="0x1c89" Id="00004a33de10f4458fcb05c02fba352f018b5a6d1d31" />
+            <Directory Name="ranking" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\ranking" RNP="0x9" DNP="0xb" UniqueId="0x1c98" Id="00008c3a0edacd117a3585045c6755c76c6407cdcee1" />
+            <Directory Name="view" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\view" RNP="0x9" DNP="0xb" UniqueId="0x1c7e" Id="000019dac3178fb20c7c9b0fa3134ef61e3f4b5da971" />
+            <Directory Name="make" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\make" RNP="0x9" DNP="0xb" UniqueId="0x1c92" Id="0000c540c1a51da89869cfe40630072fa96e8ac3d3da" />
+            <Directory Name="js" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js" RNP="0x9" DNP="0xb" UniqueId="0x1c65" Id="0000ed830a2cad918e620bb3cae846c3985ea8ddae26" />
+            <Directory Name="pages" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages" RNP="0x9" DNP="0xb" UniqueId="0x1c85" Id="000019ff601290dc13568ff4c70ea07fd47a73f13ab3" />
+            <Directory Name="jukebox" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib\jukebox" RNP="0x9" DNP="0xb" UniqueId="0x1c74" Id="0000c3e031dc4077ef803f05557278f4b80d16e30e0b" />
+            <Directory Name="private" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\private" RNP="0x9" DNP="0xb" UniqueId="0x1c95" Id="00007929e58cbac89a9dc5b1dd742d1320f52b14c245" />
+            <Directory Name="home" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\home" RNP="0x9" DNP="0xb" UniqueId="0x1c8f" Id="00007eb0baafbaaf8336d49e7c3224114d4f05b6a749" />
+            <Directory Name="help" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\help" RNP="0x9" DNP="0xb" UniqueId="0x1c8c" Id="0000c2e3b963c513881a40bfbaa5804b8ac8c7836de6" />
+            <Directory Name="50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6" RNP="0x9" DNP="0xb" UniqueId="0x1c61" Id="000058a2f91ab468367acda995ba3afa5aedd4ea90c3" />
+            <Directory Name="controller" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\controller" RNP="0x9" DNP="0xb" UniqueId="0x1c6a" Id="0000a33630b383ef62e264e4fdc9573c46627bf90b76" />
+            <Directory Name="model" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model" RNP="0x9" DNP="0xb" UniqueId="0x1c77" Id="0000bb3964d6261d1284624b44b58b6dfd1f511fa447" />
+          </DirectoryIndicators>
+          <PackageManifestIndicator>
+            <PackageManifest PackageFullName="50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6" />
+            <Identity Name="50455ByungseoLee.PatchPang" Version="1.0.0.3" Publisher="CN=024CFF8F-9182-4479-B55F-4CB6DD72D7AF" ProcessorArchitecture="neutral" />
+            <Dependencies>
+              <PackageDependency Name="Microsoft.WinJS.1.0" MinVersion="1.0.8514.0" />
+            </Dependencies>
+            <Properties>
+              <DisplayName>PatchPang</DisplayName>
+              <PublisherDisplayName>Byungseo Lee</PublisherDisplayName>
+              <Logo>images\storelogo.png</Logo>
+            </Properties>
+            <Resources>
+              <Resource Language="KO-KR" />
+            </Resources>
+            <Prerequisites>
+              <OSMinVersion>6.2.1</OSMinVersion>
+              <OSMaxVersionTested>6.2.1</OSMaxVersionTested>
+            </Prerequisites>
+            <Capabilities>
+              <Capability Name="internetClient" />
+              <DeviceCapability Name="webcam" />
+            </Capabilities>
+          </PackageManifestIndicator>
+        </Indicators>
+        <StaticProperties>
+          <Files Id="00003aa682193bfb9b8e52985e288392dff30774c853">
+            <File Name="PatchPang.js" Id="00007849e48ae0ea3bb4fdc246ec92e06b341ce7c042" ShortName="PATCHP~1.JS" Size="0x11f7" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:47" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\controller" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\controller\patchpang.js" LongPathHash="000061b1942dc1b57db7a0e49f6697e4b7cdffb1c6ab" UniqueId="0x1c6c" />
+            <File Name="game.html" Id="00005828928417083c4e2d1e60c5477d1e3c3d529be8" ShortName="GAME~1.HTM" Size="0x4c9" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\game" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\game\game.html" LongPathHash="0000ced2aee973eab5921b916f92e2527ad3fb927f23" UniqueId="0x1c8a" />
+            <File Name="make.js" Id="00007773f9fa9c4436e3d34207e8773cb6ff34c75bd7" Size="0x369" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\make" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\make\make.js" LongPathHash="00003014900ceb52a371d837e2c3d2281c0c1b55c2bf" UniqueId="0x1c94" />
+            <File Name="GameScoreModel.js" Id="000010ec80a2d3605320412d690118463bc1d3d0221f" ShortName="GAMESC~1.JS" Size="0x5d1" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model\gamescoremodel.js" LongPathHash="0000476e60d0eb91193f9ea7f701fbafdebe690028ea" UniqueId="0x1c7a" />
+            <File Name="private.html" Id="00005610a4471a10adc387a86a447bdc7daaa710d80a" ShortName="PRIVAT~1.HTM" Size="0x470" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\private" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\private\private.html" LongPathHash="00006ee75f9a5a595005b4b0efeadc73f1aeb149b661" UniqueId="0x1c96" />
+            <File Name="collie.js" Id="000045fe2723a3c26141d41fb8f5b505aa92745500b7" Size="0x3d373" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:47" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib\collie.js" LongPathHash="00003927762365c893151ef87132e5b1b3b4cccef061" UniqueId="0x1c70" />
+            <File Name="sound.js" Id="00003c1e40e7d03d64266a2cc84ca2b834d483d4347f" Size="0xa3d" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\sound.js" LongPathHash="0000ede4a2d905dc34ab715efdf72703d8b2ef826a71" UniqueId="0x1c69" />
+            <File Name="Manager.js" Id="00008788d271eb56ee49285a8fe77ffa0702da7ffa68" Size="0x2d85" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:47" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib\jukebox" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib\jukebox\manager.js" LongPathHash="00005d2beabefc1e60f6820ffee6514f4ed4e0ea9ae9" UniqueId="0x1c75" />
+            <File Name="app.js" Id="00002be11763b20ec892b64091611fb6eefa50843be5" Size="0x5fc" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:47" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\controller" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\controller\app.js" LongPathHash="0000dbc3277347e745166907892f3680ecacd72ed94f" UniqueId="0x1c6b" />
+            <File Name="ComboView.js" Id="000082217df61f80075e21421270b062c9979f0541ac" ShortName="COMBOV~1.JS" Size="0x5aa" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\view" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\view\comboview.js" LongPathHash="00003567a38cf603928ad1cb4528a4e541f95beabebc" UniqueId="0x1c7f" />
+            <File Name="ComboModel.js" Id="000033809813ea69b472a22b5f6142bbe6e9ec9c4cb3" ShortName="COMBOM~1.JS" Size="0x49e" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model\combomodel.js" LongPathHash="0000b74f0f6e07ff4585897113a6b89f32fa2580390c" UniqueId="0x1c79" />
+            <File Name="ranking.html" Id="000028ea305f3843b454efb807489e368199c4cd94d5" ShortName="RANKIN~1.HTM" Size="0x78c" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\ranking" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\ranking\ranking.html" LongPathHash="000004639152cd5e03415848343ad81ddb476ba644a0" UniqueId="0x1c99" />
+            <File Name="Observable.js" Id="000044c5615f0a157f5db9d96f550ae27ec0fc43779e" ShortName="OBSERV~1.JS" Size="0x412" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib\observable.js" LongPathHash="0000274d97688a95dbc8d44e0b30ca1bfa89a0a173ec" UniqueId="0x1c72" />
+            <File Name="SearchAlgorithm.js" Id="0000e96e38a7977c3f1bfd012435c16bd27af8d3356b" ShortName="SEARCH~1.JS" Size="0x2128" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model\searchalgorithm.js" LongPathHash="0000f6b6db90c0d003054a3e9ec444c7f5ff84c4fcbb" UniqueId="0x1c7d" />
+            <File Name="default.js" Id="0000c4d68c4b9bb7e15bf7a7ddf459655c6d6c8173d8" Size="0xb90" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:47" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\default.js" LongPathHash="0000308a79b53c5332656150e11a9861f8c4142ddda1" UniqueId="0x1c66" />
+            <File Name="Player.js" Id="0000ee040bf201e2992f41ee4c19b5e5499544641e90" Size="0x3e07" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:47" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib\jukebox" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib\jukebox\player.js" LongPathHash="00004a160bc9c57b69750c1f144512bf9d21100514fc" UniqueId="0x1c76" />
+            <File Name="ranking.js" Id="0000e7942423fd5fd0ca2953de2809b9164b742103e8" Size="0x11f8" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\ranking" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\ranking\ranking.js" LongPathHash="00003b136cd1574f0483a51412ef09cdfd232c7c85de" UniqueId="0x1c9a" />
+            <File Name="main.js" Id="0000c32a1f9d295dd3c789a6bd5b74db582f516c83cf" Size="0xb66" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\main.js" LongPathHash="0000f94e8ba841038266adf06eb36cc551ad789c3a01" UniqueId="0x1c67" />
+            <File Name="GameScoreView.js" Id="0000785a2e1fc3c7a524de320e6513e8760740e6b504" ShortName="GAMESC~1.JS" Size="0x365" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\view" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\view\gamescoreview.js" LongPathHash="0000418ba0b60c8d7a70638c00296c1bcdf0ee1c02da" UniqueId="0x1c80" />
+            <File Name="about.html" Id="0000636fcc06e00630ee8fd7c5d36404d964e2b6ff82" ShortName="ABOUT~1.HTM" Size="0x4ec" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\about" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\about\about.html" LongPathHash="0000d5f9e7adc2f572da6bcf4654a371fbe992b08412" UniqueId="0x1c87" />
+            <File Name="BlockItemPool.js" Id="000071bcb65291bd75fc039579e1eeaa16b8e00fda05" ShortName="BLOCKI~1.JS" Size="0x3e1" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model\blockitempool.js" LongPathHash="0000a0285e2e8c91517b6117653bd919bb224db4ba2c" UniqueId="0x1c78" />
+            <File Name="about.js" Id="0000284ba3a0c8cbd063186776620f9af578ecdd82e3" Size="0x326" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\about" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\about\about.js" LongPathHash="00006f7194ab69157a44276ea48da3b7f00e76bf4981" UniqueId="0x1c88" />
+            <File Name="GameTimerModel.js" Id="0000afd0d74cc326648ec144f2b0cd8c1bdc54a1eecf" ShortName="GAMETI~1.JS" Size="0x544" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model\gametimermodel.js" LongPathHash="00005af5e531f9f6d57f485a95da69d02f28ccd25eb6" UniqueId="0x1c7b" />
+            <File Name="game.js" Id="000032a563b5b6bbfbe0a8736386683e6aef4526d68b" Size="0x3b4" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\game" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\game\game.js" LongPathHash="0000ae5cd277ecc9eb67a6b90f9228c3200614731b87" UniqueId="0x1c8b" />
+            <File Name="make.html" Id="00001f44e3e9d9690160fb8831e1f228aaa774c0c886" ShortName="MAKE~1.HTM" Size="0x3cf" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\make" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\make\make.html" LongPathHash="00004b36adb09171eb20a70ac743ecf999bff273861c" UniqueId="0x1c93" />
+            <File Name="default.html" Id="0000383df956d2d8b9b0c9b9026ebf8a486fb4b7ff1e" ShortName="DEFAUL~1.HTM" Size="0x795" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:47" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\default.html" LongPathHash="0000de08889b750a6a20849fb62e35ffc98c91680f93" UniqueId="0x1c62" />
+            <File Name="LogicBoard.js" Id="00006df074c443ae7e466ca6fc52430588a6cce86bc6" ShortName="LOGICB~1.JS" Size="0x2a1f" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\model\logicboard.js" LongPathHash="000067ed9e82d903e0f458f8c14e00df2c481f3026e7" UniqueId="0x1c7c" />
+            <File Name="private.js" Id="0000831b072bdfbe76c4358f7b02e67c99451bf36252" Size="0x32a" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\private" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\private\private.js" LongPathHash="0000c64adf2ca2c3348f9f2aca6cb0dcbc5407f0f358" UniqueId="0x1c97" />
+            <File Name="home.html" Id="00006456db17b3ba80c613dc2bd5a7376739dac5215b" ShortName="HOME~1.HTM" Size="0x6ac" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\home" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\home\home.html" LongPathHash="000069bff121fea077e666b340e6db6e77e8fcaf05af" UniqueId="0x1c90" />
+            <File Name="jquery.js" Id="00009636c68b1f7ff8e8d0fd71bd7dc2c5bc5dd98822" Size="0x4344a" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:47" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib\jquery.js" LongPathHash="0000f935e140cf3ad372a175f37d8c0a92f81ad06989" UniqueId="0x1c71" />
+            <File Name="backbone.js" Id="0000ae80cdb2f2c694c2ccdbc1d5db0dbc2ca517e213" Size="0xd53b" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:47" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib\backbone.js" LongPathHash="0000115e5dce9b07595769655e2f56cc6b8f45b2d8da" UniqueId="0x1c6e" />
+            <File Name="help.html" Id="000015371e7349f18532ebbca304ba77021688b9590a" ShortName="HELP~1.HTM" Size="0x393" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\help" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\help\help.html" LongPathHash="0000381c4f86052c7d59dbdca8256a77e8bfed10f36d" UniqueId="0x1c8d" />
+            <File Name="underscore.js" Id="0000ed08d1bf6ad85115b6648e2c8ff9d15fe9778d2e" ShortName="UNDERS~1.JS" Size="0xa4b7" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib\underscore.js" LongPathHash="0000b185d12b326a2006a0dd813602e55762d86f1e1c" UniqueId="0x1c73" />
+            <File Name="navigator.js" Id="0000c3c6c4a08e7f9e5f9db85861e5fbea3cb33de446" ShortName="NAVIGA~1.JS" Size="0x1c7a" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\navigator.js" LongPathHash="0000d2d21cb12b1c769b76f40a17560a5cb86d3ad420" UniqueId="0x1c68" />
+            <File Name="LogicBoardView.js" Id="00007b1b887ca97f31e5cbf4d56856ab630679befe24" ShortName="LOGICB~1.JS" Size="0x29a8" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\view" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\view\logicboardview.js" LongPathHash="00000d3b76ae0a8ded7a294148bbfde863146fe7652b" UniqueId="0x1c82" />
+            <File Name="GameTimerView.js" Id="00005d33277092736e6a04fb8b70c0d11c5c4d95005c" ShortName="GAMETI~1.JS" Size="0x7d2" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\view" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\view\gametimerview.js" LongPathHash="00008f5f6d599270e7303e1344d58f7a86eca751a110" UniqueId="0x1c81" />
+            <File Name="help.js" Id="00008a99b569f2802b915c2a3fd326aee96ce4294fb5" Size="0x324" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\help" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\help\help.js" LongPathHash="0000d0e0b504a518d4df4fa51f79fc8f3d125c8c2a7b" UniqueId="0x1c8e" />
+            <File Name="home.js" Id="0000e5ddff343f3451a95388c1180965eefb74d6d456" Size="0x1ddb" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:48" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\home" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\pages\home\home.js" LongPathHash="00002b4db7602bb536b0687b3077e2d9ccf36c56fb94" UniqueId="0x1c91" />
+            <File Name="collie.addon.js" Id="000050814f6b847362971130bee76bf579ca16606643" ShortName="COLLIE~1.JS" Size="0x9a46" BinaryType="UNKNOWN" Created="01/23/2013 06:17:47" Modified="01/23/2013 06:17:47" Path="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib" RNP="0xa" DNP="0x9" LowerCaseLongPath="c:\program files\windowsapps\50455byungseolee.patchpang_1.0.0.3_neutral__zqb4kbs0j99c6\js\lib\collie.addon.js" LongPathHash="000069979e75c99abd3178974b458653e3b507cf97b3" UniqueId="0x1c6f" />
+          </Files>
+        </StaticProperties>
+      </Program>
+    </Installed_Programs>
+  </APPLICATIONS>
+  <DEPENDENCY_INFORMATION>
+    <AitStaticAnalysis ProgramId="0000bc647854bff72e95f7b22ac9740d624500000904" AnalysisVersion="1.54" DictionaryVersion="1.6" Type="Package" Id="50455ByungseoLee.PatchPang_1.0.0.3_neutral__zqb4kbs0j99c6">
+      <AitFile ErrorCode="0" Name="GameScoreModel.js" Id="000010ec80a2d3605320412d690118463bc1d3d0221f" />
+      <AitFile ErrorCode="0" Name="help.html" Id="000015371e7349f18532ebbca304ba77021688b9590a">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="make.html" Id="00001f44e3e9d9690160fb8831e1f228aaa774c0c886">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="about.js" Id="0000284ba3a0c8cbd063186776620f9af578ecdd82e3">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.UI.Pages.define" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="ranking.html" Id="000028ea305f3843b454efb807489e368199c4cd94d5">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+          <AitFeature Name="WinJS.Binding.Template" />
+          <AitFeature Name="WinJS.UI.ListView" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="app.js" Id="00002be11763b20ec892b64091611fb6eefa50843be5" />
+      <AitFile ErrorCode="0" Name="game.js" Id="000032a563b5b6bbfbe0a8736386683e6aef4526d68b">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.UI.Pages.define" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="ComboModel.js" Id="000033809813ea69b472a22b5f6142bbe6e9ec9c4cb3" />
+      <AitFile ErrorCode="0" Name="default.html" Id="0000383df956d2d8b9b0c9b9026ebf8a486fb4b7ff1e">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+          <AitFeature Name="WinJS.UI.AppBar" />
+          <AitFeature Name="WinJS.UI.AppBarCommand" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="sound.js" Id="00003c1e40e7d03d64266a2cc84ca2b834d483d4347f">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Namespace.define" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="Observable.js" Id="000044c5615f0a157f5db9d96f550ae27ec0fc43779e" />
+      <AitFile ErrorCode="0" Name="collie.js" Id="000045fe2723a3c26141d41fb8f5b505aa92745500b7" />
+      <AitFile ErrorCode="0" Name="collie.addon.js" Id="000050814f6b847362971130bee76bf579ca16606643" />
+      <AitFile ErrorCode="0" Name="private.html" Id="00005610a4471a10adc387a86a447bdc7daaa710d80a">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+          <AitFeature Name="WinJS.UI.SettingsFlyout" />
+          <AitFeature Name="WinJS.UI.SettingsFlyout.show" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="game.html" Id="00005828928417083c4e2d1e60c5477d1e3c3d529be8">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="GameTimerView.js" Id="00005d33277092736e6a04fb8b70c0d11c5c4d95005c" />
+      <AitFile ErrorCode="0" Name="about.html" Id="0000636fcc06e00630ee8fd7c5d36404d964e2b6ff82">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+          <AitFeature Name="WinJS.UI.SettingsFlyout" />
+          <AitFeature Name="WinJS.UI.SettingsFlyout.show" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="home.html" Id="00006456db17b3ba80c613dc2bd5a7376739dac5215b">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS" />
+          <AitFeature Name="WinJS.1.0" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="LogicBoard.js" Id="00006df074c443ae7e466ca6fc52430588a6cce86bc6" />
+      <AitFile ErrorCode="0" Name="BlockItemPool.js" Id="000071bcb65291bd75fc039579e1eeaa16b8e00fda05" />
+      <AitFile ErrorCode="0" Name="make.js" Id="00007773f9fa9c4436e3d34207e8773cb6ff34c75bd7">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.UI.Pages.define" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="PatchPang.js" Id="00007849e48ae0ea3bb4fdc246ec92e06b341ce7c042">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Navigation.navigate" />
+          <AitFeature Name="WinJS.xhr" />
+          <AitFeature Name="Windows.Storage.ApplicationData.current.localSettings" />
+          <AitFeature Name="Windows.UI.Popups.MessageDialog" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="GameScoreView.js" Id="0000785a2e1fc3c7a524de320e6513e8760740e6b504" />
+      <AitFile ErrorCode="0" Name="LogicBoardView.js" Id="00007b1b887ca97f31e5cbf4d56856ab630679befe24" />
+      <AitFile ErrorCode="0" Name="ComboView.js" Id="000082217df61f80075e21421270b062c9979f0541ac" />
+      <AitFile ErrorCode="0" Name="private.js" Id="0000831b072bdfbe76c4358f7b02e67c99451bf36252">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.UI.Pages.define" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="Manager.js" Id="00008788d271eb56ee49285a8fe77ffa0702da7ffa68" />
+      <AitFile ErrorCode="0" Name="help.js" Id="00008a99b569f2802b915c2a3fd326aee96ce4294fb5">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.UI.Pages.define" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="jquery.js" Id="00009636c68b1f7ff8e8d0fd71bd7dc2c5bc5dd98822" />
+      <AitFile ErrorCode="0" Name="backbone.js" Id="0000ae80cdb2f2c694c2ccdbc1d5db0dbc2ca517e213" />
+      <AitFile ErrorCode="0" Name="GameTimerModel.js" Id="0000afd0d74cc326648ec144f2b0cd8c1bdc54a1eecf" />
+      <AitFile ErrorCode="0" Name="main.js" Id="0000c32a1f9d295dd3c789a6bd5b74db582f516c83cf" />
+      <AitFile ErrorCode="0" Name="navigator.js" Id="0000c3c6c4a08e7f9e5f9db85861e5fbea3cb33de446">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Class.define" />
+          <AitFeature Name="WinJS.Namespace.define" />
+          <AitFeature Name="WinJS.Navigation" />
+          <AitFeature Name="WinJS.Promise" />
+          <AitFeature Name="WinJS.Promise.as" />
+          <AitFeature Name="WinJS.Promise.timeout" />
+          <AitFeature Name="WinJS.UI.Animation.enterPage" />
+          <AitFeature Name="WinJS.UI.Pages.render" />
+          <AitFeature Name="Windows.UI.ViewManagement.ApplicationView" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="default.js" Id="0000c4d68c4b9bb7e15bf7a7ddf459655c6d6c8173d8">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Application" />
+          <AitFeature Name="WinJS.Binding.optimizeBindingReferences" />
+          <AitFeature Name="WinJS.Navigation" />
+          <AitFeature Name="WinJS.UI.SettingsFlyout.populateSettings" />
+          <AitFeature Name="WinJS.UI.processAll" />
+          <AitFeature Name="Windows.ApplicationModel.Activation" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="home.js" Id="0000e5ddff343f3451a95388c1180965eefb74d6d456">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Navigation.navigate" />
+          <AitFeature Name="WinJS.UI.Pages.define" />
+          <AitFeature Name="WinJS.xhr" />
+          <AitFeature Name="Windows.Foundation.Uri" />
+          <AitFeature Name="Windows.Security.Authentication.Web.WebAuthenticationBroker.authenticateAsync" />
+          <AitFeature Name="Windows.Security.Authentication.Web.WebAuthenticationOptions.none" />
+          <AitFeature Name="Windows.Storage.ApplicationData.current.localSettings" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="ranking.js" Id="0000e7942423fd5fd0ca2953de2809b9164b742103e8">
+        <AitCategory Id="WRTJavaScript">
+          <AitFeature Name="WinJS.Binding.List" />
+          <AitFeature Name="WinJS.Navigation.navigate" />
+          <AitFeature Name="WinJS.UI.GridLayout" />
+          <AitFeature Name="WinJS.UI.Pages.define" />
+          <AitFeature Name="WinJS.xhr" />
+          <AitFeature Name="Windows.Storage.ApplicationData.current.localSettings" />
+        </AitCategory>
+      </AitFile>
+      <AitFile ErrorCode="0" Name="SearchAlgorithm.js" Id="0000e96e38a7977c3f1bfd012435c16bd27af8d3356b" />
+      <AitFile ErrorCode="0" Name="underscore.js" Id="0000ed08d1bf6ad85115b6648e2c8ff9d15fe9778d2e" />
+      <AitFile ErrorCode="0" Name="Player.js" Id="0000ee040bf201e2992f41ee4c19b5e5499544641e90" />
+    </AitStaticAnalysis>
+  </DEPENDENCY_INFORMATION>
+</REPORT>

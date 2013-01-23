@@ -1,11 +1,10 @@
-/**
+﻿/**
  * 게임 타이머 뷰
  * 
  * @class
  * @returns
  */
 var ComboView = function(model, collieLayer){
-	
 	this.model = model;
 	this.layer = collieLayer;
 	this.timer = null;

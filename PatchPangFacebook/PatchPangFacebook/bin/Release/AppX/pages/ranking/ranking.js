@@ -12,8 +12,11 @@
             this.appbar = document.getElementById("appbar").winControl;
             this.appbar.hide();
             this.showRanking();
+            this.timer = null;
             var elButtonReplay = document.getElementById("button_replay");
             var elButtonHome = document.getElementById("button_home");
+            var elUpdateMyScore = document.getElementById("updateBestScore");
+            var elScore = document.getElementById("myScore");
 
             if (!options || !options.isAfterGame) {
                 document.getElementById("afterGame").style.display = "none";
@@ -26,10 +29,24 @@
                     WinJS.Navigation.navigate("/pages/home/home.html");
                 });
             }
+
+            if (options && options.score) {
+                elUpdateMyScore.style.display = "block";
+                elScore.innerHTML = options.score;
+
+                Sound.start("great");
+                this.timer = setTimeout(function () {
+                    elUpdateMyScore.style.display = "none";
+                }, 3000);
+            } else {
+                elUpdateMyScore.style.display = "none";
+            }
         },
 
         unload: function () {
-            // TODO: Respond to navigations away from this page.
+            if (this.timer !== null) {
+                clearTimeout(this.timer);
+            }
         },
 
         updateLayout: function (element, viewState, lastViewState) {
@@ -48,14 +65,14 @@
 
             rankingList.forEach(function (item, index) {
                 item["rank"] = index + 1;
-                item["backgroundImage"] = "https://graph.facebook.com/" + item.id + "/picture";
+                item["backgroundImage"] = item.id ? "https://graph.facebook.com/" + item.id + "/picture" : "/images/character.png";
                 list.push(item);
             });
 
             var listView = document.getElementById("rankingList").winControl;
             listView.itemTemplate = document.getElementById("itemTemplate");
             listView.itemDataSource = list.dataSource;
-            listView.layout = new WinJS.UI.ListLayout();
+            listView.layout = new WinJS.UI.GridLayout();
         },
 
         showRanking: function () {
@@ -64,22 +81,41 @@
                 token: localSettings.values["accessToken"]
             };
 
-            WinJS.xhr({
-                url: "http://miconblog.com/api/get/rank/" + data.id + "/" + data.token
-            }).done(function (result) {
-                if (result.status === 200) {
-                    var response = JSON.parse(result.responseText);
-                    console.log(result.responseText);
+            if (localSettings.values["id"]) {
+                WinJS.xhr({
+                    url: "http://miconblog.com/api/get/rank/" + data.id + "/" + data.token
+                }).done(function (result) {
+                    if (result.status === 200) {
+                        var response = JSON.parse(result.responseText);
+                        console.log(result.responseText);
 
-                    if (response.success == "OK") {
-                        this.setRankingData(response.ranking);
-                    } else {
+                        if (response.success == "OK") {
+                            this.setRankingData(response.ranking);
+                        } else {
 
+                        }
                     }
-                }
-            }.bind(this), function (err) {
+                }.bind(this), function (err) {
 
-            });
+                });
+            } else {
+                //var data = {
+                //    id: false,
+                //    name: "My",
+                //    hiscore: localSettings.values["score"]
+                //};
+                //var a = [];
+                //for (var i = 0; i < 50; i++) {
+                //    a.push(data);
+                //}
+                //this.setRankingData(a);
+
+                this.setRankingData([{
+                    id: false,
+                    name: "My",
+                    hiscore: localSettings.values["score"]
+                }]);
+            }
         }
     });
 })();

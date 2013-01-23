@@ -1,4 +1,4 @@
-var SIZE = 60;
+﻿var SIZE = 60;
 
 // logo.png 이미지를 로딩한다
 collie.ImageManager.add({

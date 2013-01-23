@@ -59,6 +59,9 @@ pages\help\help.js
 pages\home\home.css
 pages\home\home.html
 pages\home\home.js
+pages\make\make.css
+pages\make\make.html
+pages\make\make.js
 pages\private\private.css
 pages\private\private.html
 pages\private\private.js

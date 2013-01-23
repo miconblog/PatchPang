@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @overview N x N 보드판을 탐색하는 알고리즘
  * @author ByungDae, SOHN(miconblog@gmail.com)
  * 
@@ -55,7 +55,7 @@
 					board[v] = 0;
 				});
 			}
-		};
+		}
 		
 		
 		// 가로 검색시 7개짜리가 하나라도 발견되면, 세로 검색에선 7개가 나올수 없다!
@@ -89,7 +89,7 @@
 					board[v] = 0;
 				});
 			}
-		};
+		}
 		
 		//console.log("결과", ret.length ? ret : null);
 		return ret.length ? ret : null;

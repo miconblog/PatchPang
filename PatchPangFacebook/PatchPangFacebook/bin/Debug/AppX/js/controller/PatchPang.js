@@ -33,35 +33,66 @@ var PatchPang = function (boardLayer, bgLayer) {
 			logic.stop();
 			this.gameover.set("visible", true);
 			Sound.start("end");
+			var score = this.score.getScore();
 
-            // 점수 등록
-			WinJS.xhr({
-			    type: "PUT",
-			    url: "http://miconblog.com:8888/api/record/" + localSettings.values["id"],
-			    data: JSON.stringify({
-			        score: this.score.getScore(),
-			        id: localSettings.values["id"],
-			        token: localSettings.values["accessToken"]
-			    })
-			}).then(function (result) {
-			    var duringTime = (+new Date()) - startTime;
-			    var term = 0;
+            // 로그인 안된 상태면 스코어를 로컬에 저장
+			if (!localSettings.values["id"]) {
+			    localSettings.values["beforeScore"] = localSettings.values["score"];
+			    localSettings.values["score"] = score;
+                
+			    var term = timeLimit;
 
-                // 3초보다 오래 걸렸으면 바로 실행, 아니면 기다렸다 실행
-			    if (duringTime < timeLimit) {
-			        term = timeLimit - duringTime;
-			    }
-
-                // 랭킹 페이지로 이동
+			    // 랭킹 페이지로 이동
 			    setTimeout(function () {
 			        WinJS.Navigation.navigate("/pages/ranking/ranking.html", {
-                        isAfterGame: true                        
+			            isAfterGame: true,
+			            score: score,
+			            bestScore: localSettings.values["beforeScore"] ? localSettings.values["beforeScore"] : 0
 			        });
-			    }, Math.max(0, term));
-			}, function (err) {
-			    new Windows.UI.Popups.MessageDialog("랭킹을 등록하는 도중 에러가 발생했습니다", "Error").showAsync();
-			    console.log(err);
-			});
+			    }, term);
+			} else {
+			    // 점수 등록
+			    WinJS.xhr({
+			        type: "PUT",
+			        url: "http://miconblog.com:8888/api/record/" + localSettings.values["id"],
+			        data: JSON.stringify({
+			            score: score,
+			            id: localSettings.values["id"],
+			            token: localSettings.values["accessToken"]
+			        })
+			    }).then(function (result) {
+			        var resultData = JSON.parse(result.responseText);
+			        var duringTime = (+new Date()) - startTime;
+			        var term = 0;
+
+			        // 3초보다 오래 걸렸으면 바로 실행, 아니면 기다렸다 실행
+			        if (duringTime < timeLimit) {
+			            term = timeLimit - duringTime;
+			        }
+
+			        console.log("end!!!!!!!!!!!!!!!!!!!!!!!");
+			        console.log("http://miconblog.com:8888/api/record/" + localSettings.values["id"]);
+			        console.log(JSON.stringify({
+			            score: score,
+			            id: localSettings.values["id"],
+			            token: localSettings.values["accessToken"]
+			        }));
+			        console.log(result.responseText);
+			        console.log(resultData.data && resultData.data.beforeBestScore ? resultData.data.beforeBestScore : 0);
+
+			        // 랭킹 페이지로 이동
+			        setTimeout(function () {
+			            WinJS.Navigation.navigate("/pages/ranking/ranking.html", {
+			                isAfterGame: true,
+			                score: score,
+			                bestScore: resultData.data && resultData.data.beforeBestScore ? resultData.data.beforeBestScore : 0
+			            });
+			        }, Math.max(0, term));
+			    }, function (err) {
+			        new Windows.UI.Popups.MessageDialog("랭킹을 등록하는 도중 에러가 발생했습니다", "Error").showAsync();
+			        console.log(err);
+			    });
+			}
 		}.bind(this)
 	});
 	new GameTimerView(this.timer, bgLayer);

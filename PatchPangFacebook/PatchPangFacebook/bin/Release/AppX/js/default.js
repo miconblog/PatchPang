@@ -40,6 +40,7 @@
             args.setPromise(WinJS.UI.processAll().then(function () {
                 // appbar 설정
                 document.getElementById("back").addEventListener("click", function () {
+                    document.getElementById("appbar").winControl.hide();
                     nav.back();
                 });
 
@@ -47,11 +48,8 @@
                     nav.navigate("/pages/ranking/ranking.html");
                 });
 
-                
-
                 // logo
                 Sound.start("intro");
-
 
                 if (nav.location) {
                     nav.history.current.initialPlaceholder = true;

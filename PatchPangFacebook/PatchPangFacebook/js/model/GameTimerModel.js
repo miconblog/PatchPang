@@ -1,10 +1,12 @@
-/**
+﻿/**
  * 게임 타이머 모델 1분 동안 타이머가 동작한다.
  * @returns
  */
 var GameTimerModel = function () {
-    var TIME_LIMIT = 60; // sec
-    var remainTime = TIME_LIMIT, nTick = null, lastTime, currTime;
+    var TIME_LIMIT = 1; // sec
+    var remainTime = TIME_LIMIT;
+    var nTick = null;
+    var lastTime, currTime;
     var self = this;
     var timer = collie.Timer.transition(function (e) {
         remainTime = TIME_LIMIT * e.value;
@@ -27,9 +29,9 @@ var GameTimerModel = function () {
         }
     });
 	
-	this.start = function() {
-	    timer.start();
-	},
+    this.start = function () {
+        timer.start();
+    };
 
 	/**
 	 * 타이머를 멈춘다.

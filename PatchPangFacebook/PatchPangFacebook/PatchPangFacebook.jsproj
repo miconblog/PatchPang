@@ -102,7 +102,6 @@
     <Content Include="js\view\GameScoreView.js" />
     <Content Include="js\view\GameTimerView.js" />
     <Content Include="js\view\LogicBoardView.js" />
-    <Content Include="js\view\RankView.js" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="pages\about\about.css" />
     <Content Include="pages\about\about.html" />
@@ -117,6 +116,9 @@
     <Content Include="pages\home\home.html" />
     <Content Include="pages\home\home.js" />
     <Content Include="default.html" />
+    <Content Include="pages\make\make.css" />
+    <Content Include="pages\make\make.html" />
+    <Content Include="pages\make\make.js" />
     <Content Include="pages\private\private.css" />
     <Content Include="pages\private\private.html" />
     <Content Include="pages\private\private.js" />
