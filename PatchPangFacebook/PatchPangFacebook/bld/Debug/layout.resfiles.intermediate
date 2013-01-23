@@ -46,7 +46,6 @@ js\view\ComboView.js
 js\view\GameScoreView.js
 js\view\GameTimerView.js
 js\view\LogicBoardView.js
-js\view\RankView.js
 pages\about\about.css
 pages\about\about.html
 pages\about\about.js

@@ -180,9 +180,6 @@
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\view\LogicBoardView.js">
       <PackagePath>js\view\LogicBoardView.js</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\view\RankView.js">
-      <PackagePath>js\view\RankView.js</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\pages\about\about.js">
       <PackagePath>pages\about\about.js</PackagePath>
     </AppxPackagedFile>

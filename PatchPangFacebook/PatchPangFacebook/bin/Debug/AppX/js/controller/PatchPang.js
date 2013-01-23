@@ -1,4 +1,4 @@
-var PatchPang = function (boardLayer, bgLayer) {
+﻿var PatchPang = function (boardLayer, bgLayer) {
     var localSettings = Windows.Storage.ApplicationData.current.localSettings;
 
     this.gameover = new collie.DisplayObject({
@@ -70,15 +70,15 @@ var PatchPang = function (boardLayer, bgLayer) {
 			            term = timeLimit - duringTime;
 			        }
 
-			        console.log("end!!!!!!!!!!!!!!!!!!!!!!!");
-			        console.log("http://miconblog.com:8888/api/record/" + localSettings.values["id"]);
-			        console.log(JSON.stringify({
-			            score: score,
-			            id: localSettings.values["id"],
-			            token: localSettings.values["accessToken"]
-			        }));
-			        console.log(result.responseText);
-			        console.log(resultData.data && resultData.data.beforeBestScore ? resultData.data.beforeBestScore : 0);
+			        //console.log("end!!!!!!!!!!!!!!!!!!!!!!!");
+			        //console.log("http://miconblog.com:8888/api/record/" + localSettings.values["id"]);
+			        //console.log(JSON.stringify({
+			        //    score: score,
+			        //    id: localSettings.values["id"],
+			        //    token: localSettings.values["accessToken"]
+			        //}));
+			        //console.log(result.responseText);
+			        //console.log(resultData.data && resultData.data.beforeBestScore ? resultData.data.beforeBestScore : 0);
 
 			        // 랭킹 페이지로 이동
 			        setTimeout(function () {

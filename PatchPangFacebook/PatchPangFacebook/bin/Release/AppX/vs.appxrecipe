@@ -5,18 +5,18 @@
     <WindowsUser>mini</WindowsUser>
     <SolutionConfiguration>Release|AnyCPU</SolutionConfiguration>
     <PackageArchitecture>neutral</PackageArchitecture>
-    <RegisteredManifestChecksum>E234C867CBC9076F04EFD1BCF3B910C829B2C628C71F6FF31C0614FB5AC3392B</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>50455ByungseoLee.PatchPang_1.0.0.2_neutral__zqb4kbs0j99c6</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>56DCE6369F4FC0D04ED8A646A6FEDF6311A2D44726C3220862B8F0D0B20B810B</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>50455ByungseoLee.PatchPang_1.0.0.3_neutral__zqb4kbs0j99c6</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>50455ByungseoLee.PatchPang_zqb4kbs0j99c6!App</RegisteredUserModeAppID>
     <RegisteredPackageID>50455ByungseoLee.PatchPang</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=024CFF8F-9182-4479-B55F-4CB6DD72D7AF</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.2</RegisteredVersion>
+    <RegisteredVersion>1.0.0.3</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\bin\Release\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2013-01-23T06:17:06.865</Modified>
+      <Modified>2013-01-23T06:17:37.793</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
@@ -151,7 +151,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\controller\PatchPang.js">
       <PackagePath>js\controller\PatchPang.js</PackagePath>
-      <Modified>2013-01-23T06:16:56.862</Modified>
+      <Modified>2013-01-23T06:35:20.955</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\default.js">
       <PackagePath>js\default.js</PackagePath>
@@ -207,7 +207,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\GameTimerModel.js">
       <PackagePath>js\model\GameTimerModel.js</PackagePath>
-      <Modified>2013-01-23T06:16:57.033</Modified>
+      <Modified>2013-01-23T06:35:31.121</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\js\model\LogicBoard.js">
       <PackagePath>js\model\LogicBoard.js</PackagePath>
@@ -315,7 +315,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="d:\work\github\PatchPang\PatchPangFacebook\PatchPangFacebook\bin\Release\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2013-01-23T06:17:06.820</Modified>
+      <Modified>2013-01-23T06:17:37.747</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

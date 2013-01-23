@@ -7,7 +7,7 @@
 
     패키지 매니페스트 파일에 대한 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=241727을 참조하십시오.
   -->
-  <Identity Name="50455ByungseoLee.PatchPang" Version="1.0.0.3" Publisher="CN=024CFF8F-9182-4479-B55F-4CB6DD72D7AF" ProcessorArchitecture="neutral" />
+  <Identity Name="50455ByungseoLee.PatchPang" Version="1.0.0.4" Publisher="CN=024CFF8F-9182-4479-B55F-4CB6DD72D7AF" ProcessorArchitecture="neutral" />
   <Properties>
     <DisplayName>PatchPang</DisplayName>
     <PublisherDisplayName>Byungseo Lee</PublisherDisplayName>

@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
 	var SIZE = 60, logic = SearchAlgorithm;
 	ready = false;
 
@@ -437,7 +437,7 @@
 
 				this.notify("UNSELECT_ITEM", {
 					prev : this.curSelectIndex,
-					index : idx,
+					index : idx
 				});
 				this.curSelectIndex = -1;
 			}

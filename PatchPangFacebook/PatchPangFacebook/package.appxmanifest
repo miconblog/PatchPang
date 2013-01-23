@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="50455ByungseoLee.PatchPang" Version="1.0.0.3" Publisher="CN=024CFF8F-9182-4479-B55F-4CB6DD72D7AF" />
+  <Identity Name="50455ByungseoLee.PatchPang" Version="1.0.0.4" Publisher="CN=024CFF8F-9182-4479-B55F-4CB6DD72D7AF" />
   <Properties>
     <DisplayName>PatchPang</DisplayName>
     <PublisherDisplayName>Byungseo Lee</PublisherDisplayName>
