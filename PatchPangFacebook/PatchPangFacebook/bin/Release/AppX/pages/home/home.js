@@ -12,7 +12,7 @@
             // TODO: 페이지를 초기화합니다.
             if (localSettings.values["accessToken"]) {
                 validateToken();
-                showName();
+                adoptFacebookStatus();
             } else {
                 element.querySelector("#login").addEventListener("click", loginFacebook, false);
             }
@@ -30,14 +30,26 @@
         }
     });
 
-    function showName() {
+    function adoptFacebookStatus() {
+        var elResult = document.getElementById("result");
+
+        // 메인 화면이 아니면 아무것도 하지 않음
+        if (!elResult) {
+            return;
+        }
+
+        document.getElementById("result").innerHTML = '';
+
         if (localSettings.values["id"]) {
             document.querySelector("#login").style.display = "none";
             document.getElementById("result").innerHTML =
                 "<img src='https://graph.facebook.com/" + localSettings.values["id"] + "/picture' class='picture' /><br />" +
                 localSettings.values["name"] + "님 환영합니다!";
         } else {
-            document.getElementById("result").innerHTML = "페이스북 로그인을 해주세요";
+            document.querySelector("#login").style.display = "block";
+            var p = document.createElement("p");
+            p.innerHTML = "페이스북 로그인을 하면<br />친구와 실력을 겨룰 수 있습니다.";
+            document.getElementById("result").appendChild(p);
         }
     }
 
@@ -47,7 +59,6 @@
     var facebookCallbackURL = "https://www.facebook.com/connect/login_success.html";
 
     function loginFacebook() {
-        console.log(1);
         var facebookURL = "https://www.facebook.com/dialog/oauth?client_id=" + facebookAppID +
             "&redirect_uri=" + encodeURIComponent(facebookCallbackURL) + "&scope=read_stream&display=popup&response_type=token";
 
@@ -68,7 +79,6 @@
             }, function (err) {
                 console.log(err);
             });
-
     }
     
     function validateToken() {
@@ -88,10 +98,10 @@
 
     //TODO 로그아웃
     function logoutFacebook() {
+        document.getElementById("appbar").winControl.hide();
         localSettings.values["accessToken"] = null;
         localSettings.values["id"] = null;
-        document.querySelector("#login").style.display = "block";
-        showName();
+        adoptFacebookStatus();
     }
 
     function startGame() {
@@ -131,8 +141,7 @@
         console.log(data);
         localSettings.values["id"] = id;
         localSettings.values["name"] = name;
-
-        showName();
+        adoptFacebookStatus();
 
         WinJS.xhr({
             type: "post",

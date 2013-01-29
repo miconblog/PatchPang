@@ -40,18 +40,37 @@
             args.setPromise(WinJS.UI.processAll().then(function () {
                 // appbar 설정
                 document.getElementById("back").addEventListener("click", function () {
-                    nav.back();
+                    document.getElementById("appbar").winControl.hide();
+
+                    if (nav.canGoBack) {
+                        nav.back();
+                    } else {
+                        nav.navigate("/pages/home/home.html");
+                    }
                 });
 
                 document.getElementById("ranking").addEventListener("click", function () {
                     nav.navigate("/pages/ranking/ranking.html");
                 });
 
-                
+                document.getElementById("make").addEventListener("click", function () {
+                    nav.navigate("/pages/make/make.html");
+                });
 
                 // logo
                 Sound.start("intro");
 
+                var localSettings = Windows.Storage.ApplicationData.current.localSettings;
+                var localFolder = Windows.Storage.ApplicationData.current.localFolder;
+                localFolder.getFileAsync("myblock.png").then(function (file) {
+                    if (file) {
+                        localSettings.values["myBlock"] = URL.createObjectURL(file);
+                    } else {
+                        localSettings.values["myBlock"] = null;
+                    }
+                }, function (err) {
+                    localSettings.values["myBlock"] = null;
+                });
 
                 if (nav.location) {
                     nav.history.current.initialPlaceholder = true;

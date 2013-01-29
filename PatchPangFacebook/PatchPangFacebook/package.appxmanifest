@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest">
-  <Identity Name="50455ByungseoLee.PatchPang" Version="1.0.0.1" Publisher="CN=024CFF8F-9182-4479-B55F-4CB6DD72D7AF" />
+  <Identity Name="50455ByungseoLee.PatchPang" Version="1.0.0.8" Publisher="CN=024CFF8F-9182-4479-B55F-4CB6DD72D7AF" />
   <Properties>
     <DisplayName>PatchPang</DisplayName>
     <PublisherDisplayName>Byungseo Lee</PublisherDisplayName>
@@ -19,9 +19,15 @@
         <DefaultTile ShowName="allLogos" WideLogo="images\largetile.png" ShortName="PatchPang" />
         <SplashScreen Image="images\splash.png" BackgroundColor="#ffa624" />
       </VisualElements>
+      <ApplicationContentUriRules>
+        <Rule Match="http://*.facebook.com" Type="include" />
+        <Rule Match="http://miconblog.com:8888" Type="include" />
+        <Rule Match="http://miconblog.com" Type="include" />
+      </ApplicationContentUriRules>
     </Application>
   </Applications>
   <Capabilities>
+    <Capability Name="picturesLibrary" />
     <Capability Name="internetClient" />
     <DeviceCapability Name="webcam" />
   </Capabilities>

@@ -1,4 +1,4 @@
-var USER = {};
+﻿var USER = {};
 
 function updateUserInfo(response) {
 	

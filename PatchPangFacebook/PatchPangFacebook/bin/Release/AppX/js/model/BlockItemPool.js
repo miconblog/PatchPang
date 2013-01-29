@@ -1,4 +1,4 @@
-(function(){
+﻿(function(){
 	
 	var SIZE = 60;
 	
@@ -34,6 +34,13 @@
 	};
 	
 	
+	BlockItemPool.prototype.reset = function () {
+	    this.pool.forEach(function (v, i, a) {
+	        v.set("backgroundImage", null);
+	        v.set("backgroundImage", "animal");
+	    });
+	};
+
 	BlockItemPool.prototype.getOne = function(opt){
 		var i=0;
 		for(; i < this.poolSize; ++i){

@@ -1,4 +1,4 @@
-(function() {
+﻿(function() {
 	var SIZE = 60, logic = SearchAlgorithm;
 	ready = false;
 
@@ -54,6 +54,10 @@
 		this.initBoardItemPositioin();
 	};
 	LogicBoard.prototype = new Observable();
+
+	LogicBoard.prototype.resetItem = function () {
+	    this.itemPool.reset();
+	};
 
 	/**
 	 * 보드 아이템의 위치를 초기화 한다.
@@ -437,7 +441,7 @@
 
 				this.notify("UNSELECT_ITEM", {
 					prev : this.curSelectIndex,
-					index : idx,
+					index : idx
 				});
 				this.curSelectIndex = -1;
 			}
